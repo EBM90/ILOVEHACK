@@ -123,7 +123,27 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
 // })
 
 router.get("/events/edit-event", withAuth, function (req, res, next) {
-  res.render("events/edit-event");
+  Event.findOne({ _id: req.query.event_id })
+    .then((event) => {
+      res.render("events/edit-event", { event });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/events/edit-event/", withAuth, (req, res, next) => {
+  const { name, description, date, location, imgPath } = req.body;
+  Event.update(
+    { _id: req.query.event_id },
+    { $set: { name, description, date, location, imgPath } }
+  )
+    .then((event) => {
+      res.redirect("/events/event-details");
+    })
+    .catch((error) => {
+      console.log(error); 
+    });
 });
 
 

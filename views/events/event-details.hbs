@@ -1,13 +1,16 @@
-{{event.length}} participants
+{{!-- {{event.length}} participants --}}
 
-{{#each event}}
-  <p><img src="{{this.imgPath}}"></p>
-  <p>{{this.name}} </p>
-  <p>{{this.date}} </p>
-  <p>{{this.location}} </p>
-  <p>{{this.details}} </p>
-  <form action="/attend-event/{{id}}" method="GET">
-  <button>I am comming</button>
+    {{#each event}}
+        <p><img src="{{this.imgPath}}"></p>
+        <p>{{this.name}} </p>
+        <p>{{this.date}} </p>
+        <p>{{this.location}} </p>
+        <p>{{this.description}} </p>
+
     {{else}}
-    <p>There are no details yet! :(</p>
-{{/each}}
+        <p>There are no details yet! :(</p>
+    {{/each}}
+    {{#each event}}
+    <a href="/attend-event/{{this._id}}">Attend event</a>
+    <a href="/event/edit?event_id={{this._id}}">Edit event</a>
+    {{/each}}
