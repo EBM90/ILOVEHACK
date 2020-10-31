@@ -42,10 +42,12 @@
     <input type="radio" id="other" name="gender" value="other">
 
     </div>
-    <br />
-    <label for="photo">Attach a nice picture ;)</label>
+    {{!-- <label for="photo">Attach a nice picture ;)</label> --}}
     <input type="file" name="photo"  required/>
+
+
     <form>
+      <div class="test1">
     <div>
   <div class="pregunta">1. How do you prefer drink your longs drinks?<br />
   </div>
@@ -58,7 +60,7 @@
   </div>
 </div>
   <div>
-  <div class="pregunta">2. I am more than having breakfast ...<br />
+  <div class="pregunta">2. I am more than having breakfast <br />
   </div>
   <div class="respuestas">
     <input type="radio" name="preg1" value="1" /> Cola-cao<br />
@@ -147,8 +149,9 @@
     <input type="radio" name="preg1" value="4" /> Alt F4<br />
   </div>
 </div>
+</div>
    </form> 
-    <button type="submit"name="signup-button">Create account</button>
+    <button class="registrobtn" type="submit"name="signup-button">Create account</button>
 </form>
 
 {{#if errorMessage}}

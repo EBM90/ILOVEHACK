@@ -32,7 +32,7 @@ a {
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
-  font-size: 34px;
+  font-size: 40px;
   font-family: 'VT323', monospace;
   padding: 20px;
 }
@@ -84,6 +84,31 @@ a {
 
 .signboton{
   margin-top: 40px;
+}
+
+
+/* TEST */
+form{
+  font-size:31px;
+  /* font-family: 'VT323', monospace; */
+}
+
+.test1{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  
+}
+
+.pregunta{
+  margin-top: 60px;
+}
+
+.respuestas{
+  font-family:'VT323', monospace;
+}
+
+.registrobtn{
+  margin-top: 90px;
 }
 
 
