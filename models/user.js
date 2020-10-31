@@ -12,6 +12,9 @@ const userSchema = new Schema(
     description:String,
     imgPath: String,
     questions:[String],
+    matches: [],
+    likedEvents: [ { type: Schema.Types.ObjectId, ref: "Events"} ],
+    ownEvents:  [ { type: Schema.Types.ObjectId, ref: "Events"} ],
   },
   {
     timestamps: true,

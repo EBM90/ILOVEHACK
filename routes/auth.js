@@ -29,7 +29,18 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
 
   const { fullname, password, repeatPassword, birthdate, gender, email, description } = req.body;
 
-  if (password.length < 8){
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+  var yyyy = today.getFullYear() - 18;
+
+  today = mm + dd + yyyy;
+  if (birthdate < today){
+    res.render("auth/signup", {
+      errorMessage: "You have to be 18 or older to find love here :)",
+    });
+    return;
+  }else if (password.length < 8){
     res.render("auth/signup", {
       errorMessage: "Your password should have at least 8 characters",
     });
@@ -51,25 +62,8 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
     return;
   }
 
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-  var yyyy = today.getFullYear() - 18;
-
-  today = mm + dd + yyyy;
-  if (birthdate < today){
-    res.render("auth/signup", {
-      errorMessage: "You have to be 18 or older to find love here :)",
-    });
-    return;
-  }
-  ;
-
   const salt = await bcrypt.genSaltSync(10);
   const hashPass = await bcrypt.hashSync(password, salt);
-
-
-
 
   try {
     const user = await User.findOne({ email: email });

@@ -1,13 +1,16 @@
-<p>events OK</p>
 
-<a href="/events/add-event"><button>add your event</button></a>
+<h2>THE COOLEST EVENTS IN THE CITY &#127798</h2>
 
-<a href="/events/edit-event"><button>edit your event</button></a>
+<a href="/events/add-event"><button>Add a new event</button></a>
 
-<h2>CHECK OUT THE COOLEST EVENTS IN THE CITY (PONER EMOJI DE FUEGO)</h2>
+<a href="/events/edit-event"><button>Edit your event</button></a>
 
-{{!-- {{#each isUserLoggedIn}}
-  <p><img src="{{currentUserInfo.photo}}"></p>
-  <p>{{ currentUserInfo.fullname}}. </p>
-  <p>{{ currentUserInfo.description}}. </p>
-{{/each}} --}}
+{{#each events}}
+  <p><img src="{{this.imgPath}}"></p>
+  <p>{{this.name}} </p>
+  <p>{{this.date}} </p>
+  <p>{{this.location}} </p>
+  <a href="/events/event-details/{{this._id}}"></i>Details</a>
+    {{else}}
+    <p>There are no events yet! :(</p>
+{{/each}}

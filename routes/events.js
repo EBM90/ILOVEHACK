@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const withAuth = require("../helpers/middleware");
 const Event = require("../models/events");
+const User = require("../models/user");
 const uploadCloud = require("../config/cloudinary");
 
 router.get("/events/add-event", withAuth, function (req, res, next) {
@@ -62,12 +63,51 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
     } catch (error) {
       next(error);
     }
+    User.findOneAndUpdate({ "_id": req.session.currentUserInfo._id }, { $push: { event: event.id } }, { new: true })
+    .then(user => console.log("The event was created!"));
   }
 );
 
 router.get("/events/all-events", withAuth, function (req, res, next) {
-  res.render("events/all-events");
+  Event.find()
+      .then( allTheEventsFromDB => {
+        console.log('Retrieved events from DB:', allTheEventsFromDB);
+        res.render('events/all-events', { events: allTheEventsFromDB });
+      })
+      .catch(error => {
+        next(error);
+      });
 });
+
+router.post("/events/all-events", withAuth, async function (req, res, next) {
+  try {
+    const event = await Event.find();
+  } catch (error) {
+    
+  }
+});
+
+// router.get('/events/event-details/{{_id}}', async (req, res, next) =>  {
+//   Event.findById(req.params.id)
+//  .then( theEvent => {
+//    console.log('Retrieved event from DB:', theEvent);
+//    res.render('events/event-details/:_id', { event: theEvent });
+//  })
+//  .catch(error => {
+//    next();
+//    console.log('Error while retrieving event details: ', error);
+//  });
+// });
+
+router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
+  const { id } = req.params;
+  console.log(id)
+  Event.findOne({ "_id": id })
+    .then(event => {
+      res.render("events/event-details", { event })
+    })
+})
+
 
 router.get("/events/edit-event", withAuth, function (req, res, next) {
   res.render("events/edit-event");
