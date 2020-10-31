@@ -6,7 +6,7 @@ const withAuth = require("../helpers/middleware");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
-const uploadCloud = require('../config/cloudinary.js');
+const uploadCloud = require('../config/cloudinary');
 
 const bcrypt = require("bcryptjs");
 const { findOne } = require("../models/user");

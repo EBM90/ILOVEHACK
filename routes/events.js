@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const withAuth = require("../helpers/middleware");
 const Event = require("../models/events");
-const uploadCloud = require("../config/cloudinary.js");
+const uploadCloud = require("../config/cloudinary");
 
 router.get("/events/add-event", function (req, res, next) {
   res.render("events/add-event");
