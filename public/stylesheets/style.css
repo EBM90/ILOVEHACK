@@ -14,7 +14,7 @@ a {
 }
 
 #form {
-  margin: 250px auto;
+  margin: 180px auto;
   width: 580px;
 }
 
@@ -34,6 +34,7 @@ a {
   width: 100%;
   font-size: 34px;
   font-family: 'VT323', monospace;
+  padding: 20px;
 }
 
 #form input,
@@ -44,6 +45,7 @@ a {
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 #form button {
@@ -78,6 +80,10 @@ a {
 }
 .account-message{
   font-size: 34px;
+}
+
+.signboton{
+  margin-top: 40px;
 }
 
 
@@ -124,7 +130,9 @@ background-size: cover;
   font-family: 'VT323', monospace;
 }
 
-
+nav{
+  margin-top: -25px;
+}
 
 
 /* FORMULARIO DE SIGN UP */
