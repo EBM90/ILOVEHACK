@@ -130,6 +130,7 @@ margin-top: 10px;
 .textoFAQ{
 display:flex;
   justify-content: center;
+  font-size: 60px;
 }
 .service-box {
 font-size:1.7em;
@@ -142,6 +143,7 @@ margin: 50px 5% 0 5%;
 padding: 20px;
 width: 40%;
 background-color:white;
+font-size: 35px;
 }
 .service-box img {
 height:125px;
@@ -156,6 +158,7 @@ flex-wrap: wrap;
 background-image:url("") ;
 background-size: cover; 
 }
+
 
 
 /* NAVBAR */
@@ -301,4 +304,33 @@ nav{
 .imgevent{
   margin-left: 28%;
   padding-top: 100px;
+}
+
+/* ADD-EVENT */
+
+.tituloadd{
+  font-size: 56px;
+  margin-left: 32%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.descadd{
+  font-size: 36px;
+  padding-bottom: 30px;
+}
+
+.formadd{
+  margin-left: 22%;
+  padding-bottom: 90px;
+}
+
+.addbtn{
+  box-sizing: border-box;
+  font-size: 50px;
+  outline: 0;
+  padding: 4px;
+  width: 70%;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  margin-left: 150px;
 }
