@@ -11,43 +11,35 @@ router.get('/', withAuth, (req, res, next) => {
   res.render('index', { title: 'I <3 HACK' });
 });
 
-router.get("/secret", function (req, res, next) {
-  res.render("secret");
+router.get('/', (req, res, next) => {
+  res.render('home', { title: 'I <3 HACK' });
 });
 
-//esto es nuevo
 router.get("/faq", withAuth, function (req, res, next) {
   res.render("faq");
 });
 
-//esto es nuevo
 router.get("/myprofile", withAuth, function (req, res, next) {
   res.render("myprofile");
 });
 
-//esto es nuevo
 router.get("/events", withAuth, function (req, res, next) {
-  res.render("events");
+  res.render("all-events"); 
 });
 
-//esto es nuevo
 router.get("/fav-events", withAuth, function (req, res, next) {
   res.render("user/fav-events");
 });
 
-//esto es nuevo
 router.get("/matches", withAuth, function (req, res, next) {
   res.render("user/matches");
 });
 
-// intento de traer user, prueba 1
 router.get('/usuario', withAuth, async (req, res, next)=>{
   const userId= req.user._id;
   console.log(userId)
-  // console.log(req)
   try {
   const user= await User.findById(userId);
-  // res.locals.currentUserInfo=user;
   res.render('myprofile', {user});
   } catch (error) {
     next(error)
