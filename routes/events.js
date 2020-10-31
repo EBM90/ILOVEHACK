@@ -87,18 +87,6 @@ router.post("/events/all-events", withAuth, async function (req, res, next) {
   }
 });
 
-// router.get('/events/event-details/{{_id}}', async (req, res, next) =>  {
-//   Event.findById(req.params.id)
-//  .then( theEvent => {
-//    console.log('Retrieved event from DB:', theEvent);
-//    res.render('events/event-details/:_id', { event: theEvent });
-//  })
-//  .catch(error => {
-//    next();
-//    console.log('Error while retrieving event details: ', error);
-//  });
-// });
-
 router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
   const { id } = req.params;
   console.log(id)
@@ -108,6 +96,31 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
     })
 })
 
+router.get("/attend-event", withAuth, async (req, res, next) => {
+  try {
+    const { _id } = req.session.currentUser
+    const data = await Event.find()
+    const attendEvent = await User.findOne({ _id })
+    const newAttendEvent = []
+
+    for (attend of data) {
+      let iWillAttend = false
+      attendEvent.events.forEach(userAttend => {
+        if (attend._id.equals(userAttend._id)) {
+          iWillAttend = true
+        }
+      })
+      if (!iWillAttend) {
+        newAttendEvent.push(attend)
+      }
+    }
+    res.render("/events/attend-event", { newAttendEvent })
+  }
+  catch (error) {
+    console.log('Error finding event', error)
+  }
+
+})
 
 router.get("/events/edit-event", withAuth, function (req, res, next) {
   res.render("events/edit-event");

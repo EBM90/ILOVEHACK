@@ -1,1 +1,13 @@
-{{usersWithEvent.length}} participants
+{{event.length}} participants
+
+{{#each event}}
+  <p><img src="{{this.imgPath}}"></p>
+  <p>{{this.name}} </p>
+  <p>{{this.date}} </p>
+  <p>{{this.location}} </p>
+  <p>{{this.details}} </p>
+  <form action="/attend-event/{{id}}" method="GET">
+  <button>I am comming</button>
+    {{else}}
+    <p>There are no details yet! :(</p>
+{{/each}}
