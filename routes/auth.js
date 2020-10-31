@@ -140,10 +140,10 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-router.get('/logout', (req, res, next) => {
-  req.session.destroy((err) => {
-    res.redirect('/login')
-  })
-})
+router.get("/logout", withAuth, (req, res, next) => {
+  res.cookie("token", "", { expires: new Date(0) });
+  res.redirect("/");
+});
+
 
 module.exports = router;

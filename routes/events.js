@@ -4,7 +4,7 @@ const withAuth = require("../helpers/middleware");
 const Event = require("../models/events");
 const uploadCloud = require("../config/cloudinary");
 
-router.get("/events/add-event", function (req, res, next) {
+router.get("/events/add-event", withAuth, function (req, res, next) {
   res.render("events/add-event");
 });
 
@@ -58,11 +58,23 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
         description,
         imgPath,
       });
-      res.redirect("/events/all-events");
+      res.redirect("all-events");
     } catch (error) {
       next(error);
     }
   }
 );
+
+router.get("/events/all-events", withAuth, function (req, res, next) {
+  res.render("events/all-events");
+});
+
+router.get("/events/edit-event", withAuth, function (req, res, next) {
+  res.render("events/edit-event");
+});
+
+
+
+
 
 module.exports = router;
