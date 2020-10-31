@@ -6,8 +6,9 @@ const eventSchema = new Schema(
     {
       name: String,
       date: Date,
-      ubication:String,
-      photo:String,
+      description: String,
+      location:String,
+      imgPath: String,
     },
     {
       timestamps: true,

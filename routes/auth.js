@@ -1,10 +1,12 @@
 var express = require("express");
+
 var router = express.Router();
 const withAuth = require("../helpers/middleware");
 
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
+const uploadCloud = require('../config/cloudinary.js');
 
 const bcrypt = require("bcryptjs");
 const { findOne } = require("../models/user");
@@ -17,7 +19,7 @@ router.get("/signup", function (req, res, next) {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
   if (req.body.email === "" || req.body.password === "") {
     res.render("auth/signup", {
       errorMessage: "Indicate a username and a password to sign up",
@@ -25,32 +27,26 @@ router.post("/signup", async (req, res, next) => {
     return;
   }
 
-  const { fullname, password, repeatPassword, birthdate, gender, email, description, photo } = req.body;
+  const { fullname, password, repeatPassword, birthdate, gender, email, description } = req.body;
 
   if (password.length < 8){
     res.render("auth/signup", {
       errorMessage: "Your password should have at least 8 characters",
     });
     return;
-  }
-
-  if (password !== repeatPassword){
+  }else if (password !== repeatPassword){
     res.render("auth/signup", {
       errorMessage: "Your passwords are not matching",
     });
     return;
-  }
-
-  if (fullname.length === ""){
+  }else if (fullname.length === ""){
     res.render("auth/signup", {
       errorMessage: "Your match will need to know how to call you ;)",
     });
     return;
-  }
-
-  if (description.length < 10){
+  }else if (description.length < 10){
     res.render("auth/signup", {
-      errorMessage: "Tell your match a bit more about yourself!",
+      errorMessage: "Tell your future match a bit more about yourself!",
     });
     return;
   }
@@ -69,10 +65,11 @@ router.post("/signup", async (req, res, next) => {
   }
   ;
 
-
-
   const salt = await bcrypt.genSaltSync(10);
   const hashPass = await bcrypt.hashSync(password, salt);
+
+
+
 
   try {
     const user = await User.findOne({ email: email });
@@ -82,7 +79,8 @@ router.post("/signup", async (req, res, next) => {
       });
       return;
     }
-
+    const imgPath = req.file.url;
+    
     await User.create({
       fullname,
       password: hashPass,
@@ -90,21 +88,13 @@ router.post("/signup", async (req, res, next) => {
       gender,
       email,
       description,
-      photo,
+      imgPath,
     });
     res.redirect("/");
   } catch (error) {
     next(error);
   }
 });
-
-/*attribute=name tag; validator=predefined names from the library; 
-validator options=one of the given values that given Validator name accepts;*/
-// var constraints = {
-//   <attribute>: {
-//     <validator name>: <validator options>
-//   }
-// }
 
 
 //LOG IN + TOKEN VALIDATION (MIDDLEWARE ALSO INVOLVED)
@@ -155,13 +145,5 @@ router.get('/logout', (req, res, next) => {
     res.redirect('/login')
   })
 })
-
-
-
-// TEST
-
-router.get("/testsignup", function (req, res, next) {
-  res.render("auth/testsignup");
-});
 
 module.exports = router;

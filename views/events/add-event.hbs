@@ -1,16 +1,17 @@
-{{! PENDIENTE MODIFICAR }}
-<form action="/events/add" method="POST">
-  <label for="">Picture Url</label>
-  <input type="text" name="pictureUrl" />
+<h2>ADD YOUR EVENT</h2>
+<form action="/events/add" method="POST" enctype="multipart/form-data">
 
-  <label for="">Name:</label>
-  <input type="text" name="name" />
- 
-  <label for="">Date:</label>
-  <input type="text" name="Date" />
- 
-  <label for="">Description:</label>
-  <input type="text" name="description" />
- 
+  <label for="name">Event name</label>
+  <input type="text" name="name" placeholder="The event name goes here" />
+
+  <label for="date">Event date</label>
+  <input type="date" name="Date" />
+
+  <label for="description">Description</label>
+  <input type="text" name="description" required />
+
+  <label for="photo">Attach a nice picture ;)</label>
+  <input type="file" name="photo" required />
+
   <button type="submit">Add event</button>
 </form>

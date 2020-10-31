@@ -10,7 +10,7 @@ const userSchema = new Schema(
     gender:String,
     email:String,
     description:String,
-    photo:String,
+    imgPath: String,
     questions:[String],
   },
   {
