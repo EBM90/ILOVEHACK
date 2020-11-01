@@ -61,7 +61,7 @@ router.get("/user/edit", withAuth, function (req, res, next) {
 });
 
 router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
-  const { fullname, password, repeatPassword, birthdate, gender, email, description } = req.body;
+  const { fullname, password, repeatPasswordedir, user, email, description } = req.body;
   const imgPath = req.file.url;
 
   try {
@@ -94,7 +94,7 @@ const hashPass = await bcrypt.hashSync(password, salt);
 
   await User.updateOne(
     { _id: req.query.user_id },
-    { $set: { fullname, password: hashPass, repeatPassword, birthdate, gender, email, description, imgPath } }, { new: true }
+    { $set: { fullname, password: hashPass, repeatPassword, email, description, imgPath } }, { new: true }
   )
     .then((user) => {
       res.redirect("/myprofile");

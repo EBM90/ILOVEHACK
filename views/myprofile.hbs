@@ -1,19 +1,23 @@
 {{!-- <p>I&lt3HACK</p> --}}
 
 {{!-- esto es para que salga info según si estás logueado o no --}}
+
 {{#if isUserLoggedIn}}
   <p class="saludo"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
 {{/if}}
 {{#if isUserLoggedIn}}
-  <p class="perfilimg"><img src="{{currentUserInfo.imgPath}}"></p>
+<div class="profile-align">
+  <img class="profileimg" src="{{currentUserInfo.imgPath}}">
   <p class="fullname">{{ currentUserInfo.fullname}}. </p>
   <p class="descripcion">About you:{{ currentUserInfo.description}}. </p>
+</div>
 {{/if}}
 
 <a href="/user/edit?user_id={{currentUserInfo._id}}"><button>Edit profile</button></a>
-<div class="bamama">
-<a class="btnprofile" href="/fav-events"><button>FAV events</button></a>
 
-<a class="btnprofile" href="/matches"><button>Matches</button></a>
+<div class="btnmatch">
+<a class="btnprofile" href="/fav-events"><button>FAV events &#127775</button></a>
+
+<a class="btnprofile" href="/matches"><button>Matches &#127777</button></a>
 
 </div>
