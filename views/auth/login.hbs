@@ -1,6 +1,6 @@
 <form action="/login" method="POST" id="form">
     <h2>Login to I <img class="ironman" src="https://img.icons8.com/ios-filled/2x/pixel-heart.png" width="90" height="70"> HACK</h2>
-
+    <div class="loginbtn">
     <label for="email">Email</label>
     <input type="email" name="email">
 
@@ -8,11 +8,12 @@
     <input type="password" name="password">
 
     <button class="signboton">Sign in</button>
-
+    </div>
     {{#if errorMessage }}
     <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
 
     <p class="account-message"> Don't have an account? <a href="/signup">Sign up</a>
     </p>
+    
 </form>

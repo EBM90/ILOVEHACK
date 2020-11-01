@@ -1,16 +1,15 @@
 
-<h2>THE COOLEST EVENTS IN THE CITY &#127798</h2>
+<h2 class="eventtitle">THE COOLEST EVENTS IN THE CITY &#127798</h2>
+<div class="btnevent">
+<a class="btnprofile2" href="/events/add-event"><button>Add a new event</button></a>
 
-<a href="/events/add-event"><button>Add a new event</button></a>
-
-<a href="/events/edit-event"><button>Edit your event</button></a>
-
+<a class="btnprofile2" href="/events/edit-event"><button>Edit your event</button></a>
+</div>
 {{#each events}}
-  <p><img src="{{this.imgPath}}"></p>
-  <p>{{this.name}} </p>
-  <p>{{this.date}} </p>
-  <p>{{this.location}} </p>
-  <a href="/events/event-details/{{this._id}}"></i>Details</a>
+  <p class="imgevent"><img src="{{this.imgPath}}"></p>
+  <p class="nombreevento">{{this.name}} </p>
+  <p class="nombreevento">{{this.date}} </p>
+  <p class="nombreevento">{{this.location}} <a href="/events/event-details/{{this._id}}"></i>Details</a></p>
     {{else}}
     <p>There are no events yet! :(</p>
 {{/each}}

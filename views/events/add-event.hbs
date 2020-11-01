@@ -1,19 +1,23 @@
 <form action="/events/add-event" method="POST" enctype="multipart/form-data">
-  <h2>ADD YOUR EVENT</h2>
+  <h2 class="tituloadd">ADD YOUR EVENT</h2>
+
+  <p class="descadd">What is add event? This is where you can share with the community of heart hackers those events that you know, or that you can promote yourself to end the lack of love in the world ... are you ready to take the leap you need?</p>
+<div class="formadd">
   <label for="name">Event name</label>
-  <input type="text" name="name" placeholder="The event name goes here" />
+  <input type="text" name="name" placeholder="The event name goes here" /><br>
 
   <label for="date">Event date</label>
-  <input type="date" name="date" />
+  <input type="date" name="date" /><br>
 
     <label for="location">Location</label>
-  <input type="text" name="location" required />
+  <input type="text" name="location" required /><br>
 
   <label for="description">Description</label>
-  <input type="text" name="description" required />
+  <input type="text" name="description" required /><br>
 
   <label for="photo">Attach a nice picture ;)</label>
   <input type="file" name="photo" required />
+  </div>
 
-  <button type="submit">Add event</button>
+  <button class="addbtn" type="submit">Add event</button>
 </form>

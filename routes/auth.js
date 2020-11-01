@@ -84,7 +84,7 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
       description,
       imgPath,
     });
-    res.redirect("/");
+    res.redirect("/login");
   } catch (error) {
     next(error);
   }
@@ -122,7 +122,7 @@ router.post("/login", async (req, res, next) => {
         expiresIn: "1h"
       });
       res.cookie("token", token, { httpOnly: true });
-      res.status(200).redirect("/");
+      res.status(200).redirect("/myprofile");
     } else {
       res.render("auth/login", {
         errorMessage: "Incorrect password",
