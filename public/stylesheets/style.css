@@ -141,7 +141,7 @@ box-sizing: border-box;
 box-shadow: 2px 2px 10px 0 #eee;
 margin: 50px 5% 0 5%;
 padding: 20px;
-width: 40%;
+width: 90%;
 background-color:white;
 font-size: 35px;
 }
@@ -151,7 +151,7 @@ height:125px;
 #structure > div{
 display: flex;
 justify-content: between;
-flex-direction: row;
+flex-direction: column;
 flex-wrap: wrap;
 }
 #structure{
@@ -169,7 +169,11 @@ background-size: cover;
 
 nav{
   margin-top: -25px;
+  width: 106%;
+  margin-left: -26px;
+  margin-top: -50px;
 }
+
 
 
 /* FORMULARIO DE SIGN UP */
@@ -232,18 +236,13 @@ nav{
 
 
 /* MY PROFILE */
-.saludo{
+.greeting{
   font-size: 38px;
   padding-top: 10%;
 }
-.perfilimg{
-  margin-left: 27%;
-  margin-top: 4%;
-}
-
 .fullname{
   font-size: 38px;
-  margin-left: 65%;
+  margin-left: 50%;
 }
 
 .descripcion{
@@ -266,12 +265,33 @@ nav{
   /* padding-top: 80px; */
 }
 
-.bamama{
+.btnmatch{
   margin-top: 260px;
 }
 
-/* ALL EVENTS */
+.profileimg{
+max-width: 500px;
+max-height: 800px;
+min-width: 400px;
+min-height: 700px;
+}
 
+.profile-align{
+  display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+/* ALL EVENTS */
+.eventalign{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+
+}
 .btnprofile2{
   /* display: flex;
   justify-content: space-around; */
@@ -282,17 +302,18 @@ nav{
   width: 100%;
   margin-bottom: 20px;
   padding-right: 10px;
-  margin-left: 50px;
+  margin-left: 230px;
 }
 
 .btnevent{
-  margin-left: 8%;
+  
   padding-top: 30px;
 }
 
 .eventtitle{
   font-size: 60px;
-  margin-left: 32px;
+  margin-top: 80px;
+  
 }
 
 .nombreevento{
@@ -302,8 +323,12 @@ nav{
 }
 
 .imgevent{
-  margin-left: 28%;
   padding-top: 100px;
+  /* max-width: 600px;
+max-height: 700px;
+min-width: 600px;
+min-height: 700px; */
+width: 53rem;
 }
 
 /* ADD-EVENT */
@@ -317,6 +342,9 @@ nav{
 .descadd{
   font-size: 36px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .formadd{
@@ -332,8 +360,77 @@ nav{
   width: 70%;
   margin-bottom: 20px;
   padding-right: 10px;
-  margin-left: 150px;
+  margin-left: 130px;
 }
+
+.align-allevent{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btnadd2{
+  box-sizing: border-box;
+  font-size: 50px;
+  outline: 0;
+  padding: 4px;
+  width: 70%;
+  margin-right: -33%;
+
+}
+
+/* EDIT EVENT */
+
+.btneditevent{
+  box-sizing: border-box;
+  font-size: 50px;
+  outline: 0;
+  padding: 4px;
+  width: 50%;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  margin-left: 60px;
+  margin-top: 140px;
+  
+}
+
+.tituloedit{
+  margin-left: 41%;
+  font-size: 52px;
+}
+
+.editform{
+  margin-left: 27%;
+  margin-top: 90px;
+  
+}
+
+/* EVENT DETAIL */
+.align-event-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -230px;
+}
+ .img-eventdetails{
+   width: 53rem;
+ }
+
+ #event-details p{
+   font-size: 36px;
+ }
+ 
+ .details-button{
+   font-size: 42px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+ }
+
+
+
+
  /* CAMARA */
 /* body {
   height: 100vh;
