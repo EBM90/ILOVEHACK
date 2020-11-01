@@ -11,11 +11,11 @@
     {{else}}
         <p>There are no details yet! :(</p>
     {{/each}}
-    {{#each event}}
+    
     <i class="details-button">
-    <a href="/attend-event/{{this._id}}">Attend event</a>
-    <a href="/events/edit?event_id={{this._id}}">Edit event</a>
+    <a href="/attend-event/{{event._id}}">Attend event</a>
+    <a href="/events/edit?event_id={{event._id}}">Edit event</a>
    </i>
     </div>
-    {{/each}}
+   
 </div>
