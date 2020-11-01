@@ -1,22 +1,22 @@
-Edit event
+<h1 class="tituloedit">Edit event</h1>
 
 
-<form action="/events/edit?event_id={{event._id}}" method="post" enctype="multipart/form-data">
+<form class="editform" action="/events/edit?event_id={{event._id}}" method="post" enctype="multipart/form-data">
 
   <label for="name">Event name</label>
   <input type="text" name="name" value="{{event.name}}" placeholder="The event name goes here" />
-</br>
+</br><br>
   <label for="date">Event date</label>
   <input type="date" name="date" value="{{event.date}}"  required/>
-</br>
+</br><br>
   <label for="location">Location</label>
   <input type="text" name="location" value="{{event.location}}" />
-</br>
+</br><br>
   <label for="description">Description</label>
   <input type="text" name="description" value="{{event.description}}" />
-</br>
+</br><br>
   <label for="photo">Edit picture</label>
   <input type="file" name="photo" value="{{event.imgPath}}" />
 </br>
-  <button type="submit">EDIT</button>
+  <button class="btneditevent" type="submit">EDIT</button>
 </form>
