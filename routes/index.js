@@ -31,6 +31,8 @@ router.get("/matches", withAuth, function (req, res, next) {
   res.render("user/matches");
 });
 
+//profile details
+
 router.get('/myprofile', withAuth, async (req, res, next)=>{
   const userId= req.user._id;
   console.log(userId)
@@ -42,8 +44,6 @@ router.get('/myprofile', withAuth, async (req, res, next)=>{
     return;
   }
 })
-
-
 
 //edit user profile
 
@@ -100,6 +100,15 @@ const hashPass = await bcrypt.hashSync(password, salt);
       console.log(error); 
     });
 });
+
+//delete account
+
+router.post("/user/delete", withAuth, async (req, res, next) => {
+  await User.deleteOne({ _id: req.query.user_id });
+    res.redirect("/");
+});
+
+//add favourite events
 
 
 
