@@ -122,7 +122,7 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
 
 // })
 
-router.get("/events/edit-event", withAuth, function (req, res, next) {
+router.get("/events/edit", withAuth, function (req, res, next) {
   Event.findOne({ _id: req.query.event_id })
     .then((event) => {
       res.render("events/edit-event", { event });
@@ -132,14 +132,16 @@ router.get("/events/edit-event", withAuth, function (req, res, next) {
     });
 });
 
-router.post("/events/edit-event/", withAuth, (req, res, next) => {
-  const { name, description, date, location, imgPath } = req.body;
+router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, next) => {
+  const { name, description, date, location } = req.body;
+  const imgPath = req.file.url;
+
   Event.update(
     { _id: req.query.event_id },
     { $set: { name, description, date, location, imgPath } }
   )
     .then((event) => {
-      res.redirect("/events/event-details");
+      res.redirect("/events/all-events");
     })
     .catch((error) => {
       console.log(error); 
