@@ -236,7 +236,7 @@ nav{
 
 
 /* MY PROFILE */
-.saludo{
+.greeting{
   font-size: 38px;
   padding-top: 10%;
 }
@@ -286,7 +286,6 @@ flex-direction: column;
 
 /* ALL EVENTS */
 .eventalign{
-
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -313,6 +312,7 @@ align-items: center;
 
 .eventtitle{
   font-size: 60px;
+  margin-top: 80px;
   
 }
 
@@ -396,6 +396,7 @@ width: 53rem;
 
 .tituloedit{
   margin-left: 41%;
+  font-size: 52px;
 }
 
 .editform{
@@ -404,8 +405,28 @@ width: 53rem;
   
 }
 
+/* EVENT DETAIL */
+.align-event-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -230px;
+}
+ .img-eventdetails{
+   width: 53rem;
+ }
 
-
+ #event-details p{
+   font-size: 36px;
+ }
+ 
+ .details-button{
+   font-size: 42px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+ }
 
 
 
