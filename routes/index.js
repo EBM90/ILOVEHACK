@@ -10,11 +10,8 @@ const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 /* GET home page. */
-router.get('/', withAuth, (req, res, next) => {
-  res.render('myprofile', { title: 'I <3 HACK' });
-});
 
-router.get('/index', (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'I <3 HACK' });
 });
 
