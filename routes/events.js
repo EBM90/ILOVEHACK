@@ -96,34 +96,56 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
     })
 })
 
-router.get("/attend-event", withAuth, async (req, res, next) => {
-  try {
-    const { _id } = req.session.currentUser
-    const data = await Event.find()
-    const attendEvent = await User.findOne({ _id })
-    const newAttendEvent = []
+// router.get("/attend-event", withAuth, async (req, res, next) => {
+//   try {
+//     const { _id } = req.session.currentUser
+//     const data = await Event.find()
+//     const attendEvent = await User.findOne({ _id })
+//     const newAttendEvent = []
 
-    for (attend of data) {
-      let iWillAttend = false
-      attendEvent.events.forEach(userAttend => {
-        if (attend._id.equals(userAttend._id)) {
-          iWillAttend = true
-        }
-      })
-      if (!iWillAttend) {
-        newAttendEvent.push(attend)
-      }
-    }
-    res.render("/events/attend-event", { newAttendEvent })
-  }
-  catch (error) {
-    console.log('Error finding event', error)
-  }
+//     for (attend of data) {
+//       let iWillAttend = false
+//       attendEvent.events.forEach(userAttend => {
+//         if (attend._id.equals(userAttend._id)) {
+//           iWillAttend = true
+//         }
+//       })
+//       if (!iWillAttend) {
+//         newAttendEvent.push(attend)
+//       }
+//     }
+//     res.render("/events/attend-event", { newAttendEvent })
+//   }
+//   catch (error) {
+//     console.log('Error finding event', error)
+//   }
 
-})
+// })
 
-router.get("/events/edit-event", withAuth, function (req, res, next) {
-  res.render("events/edit-event");
+router.get("/events/edit", withAuth, function (req, res, next) {
+  Event.findOne({ _id: req.query.event_id })
+    .then((event) => {
+      res.render("events/edit-event", { event });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, next) => {
+  const { name, description, date, location } = req.body;
+  const imgPath = req.file.url;
+
+  Event.update(
+    { _id: req.query.event_id },
+    { $set: { name, description, date, location, imgPath } }
+  )
+    .then((event) => {
+      res.redirect("/events/all-events");
+    })
+    .catch((error) => {
+      console.log(error); 
+    });
 });
 
 
