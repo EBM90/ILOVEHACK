@@ -176,7 +176,12 @@ router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, ne
     });
 });
 
+//delete event
 
+router.post("/events/delete", withAuth, async (req, res, next) => {
+  await Event.deleteOne({ _id: req.query.event_id });
+    res.redirect("all-events");
+});
 
 
 
