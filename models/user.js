@@ -10,7 +10,7 @@ const userSchema = new Schema(
     gender:String,
     email:String,
     description:String,
-    imgPath: String,
+    imgPath: {type:String, default: 'linkimage'},
     questions:[String],
     matches: [],
     likedEvents: [ { type: Schema.Types.ObjectId, ref: "Events"} ],
