@@ -1,0 +1,8 @@
+<h1 class="tituloedit">Attach your new hero picture here!</h1>
+
+<img src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
+<form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" required />
+    </br>
+    <button class="btneditevent" type="submit">EDIT</button>
+</form>

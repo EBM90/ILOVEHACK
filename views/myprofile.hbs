@@ -8,9 +8,9 @@
 {{#if isUserLoggedIn}}
 <div class="profile-align">
   <img class="profileimg" src="{{currentUserInfo.imgPath}}">
+  <a href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit Image</a>
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
-  {{!-- <p class="fullname">{{ currentUserInfo.fullname}}. </p> --}}
-  <p class="description">About you:{{currentUserInfo.description}}. </p>
+  <p class="description">About you:{{ currentUserInfo.description}}. </p>
 </div>
 {{/if}}
 
@@ -19,6 +19,6 @@
 <div class="btnmatch">
 <a class="btnprofile" href="/fav-events"><button>FAV events &#127775</button></a>
 
-<a class="btnprofile" href="/matches"><button>Matches &#127777</button></a>
+<a class="btnprofile" href="/user/matches?user_id={{currentUserInfo._id}}"><button>Matches &#127777</button></a>
 
 </div>
