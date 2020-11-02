@@ -10,11 +10,11 @@
   <img class="profileimg" src="{{currentUserInfo.imgPath}}">
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
   {{!-- <p class="fullname">{{ currentUserInfo.fullname}}. </p> --}}
-  <p class="description">About you:{{ currentUserInfo.description}}. </p>
+  <p class="description">About you:{{currentUserInfo.description}}. </p>
 </div>
 {{/if}}
 
-<a href="/user/edit?user_id={{currentUserInfo._id}}"><button>Edit profile</button></a>
+<a class="edit-profile" href="/user/edit?user_id={{currentUserInfo._id}}"><button>Edit profile</button></a>
 
 <div class="btnmatch">
 <a class="btnprofile" href="/fav-events"><button>FAV events &#127775</button></a>

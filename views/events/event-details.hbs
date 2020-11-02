@@ -13,9 +13,10 @@
     {{/each}}
     
     <i class="details-button">
-    <a href="/attend-event/{{event._id}}">Attend event</a>
-    <a href="/events/edit?event_id={{event._id}}">Edit event</a>
+    <a class="attend-btn" href="/attend-event/{{event._id}}">Attend event</a>
+    <a class="edit-event-btn" href="/events/edit?event_id={{event._id}}">Edit event</a>
    </i>
     </div>
-   
+   <input type="checkbox" id="switch" name="switch">
+  <label for="switch" class="switch"></label>
 </div>
