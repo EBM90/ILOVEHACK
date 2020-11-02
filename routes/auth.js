@@ -55,9 +55,9 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
       errorMessage: "Your match will need to know how to call you ;)",
     });
     return;
-  }else if (description.length < 10){
+  }else if (description.length < 180){
     res.render("auth/signup", {
-      errorMessage: "Tell your future match a bit more about yourself!",
+      errorMessage: "Tell your future match a bit more about yourself! (at least 180 characters)",
     });
     return;
   }
