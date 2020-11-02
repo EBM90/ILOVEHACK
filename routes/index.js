@@ -58,7 +58,7 @@ router.get("/user/edit", withAuth, function (req, res, next) {
 });
 
 router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
-  const { fullname, password, repeatPasswordedir, user, email, description } = req.body;
+  const { fullname, password, repeatPassword, email, description } = req.body;
   const imgPath = req.file.url;
 
   try {

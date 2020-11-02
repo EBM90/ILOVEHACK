@@ -1,1 +1,16 @@
 <p>FAVevents OK</p>
+
+<i class="align-allevent">
+<h2 class="eventtitle">MY fav events</h2>
+<div class="btnevent">
+</i>
+{{#each events}}
+<div class="eventalign">
+  <img class="imgevent" src="{{this.imgPath}}">
+  <p class="nombreevento">{{this.name}} <a href="/events/event-details/{{this._id}}"></i>Event details</a></p>
+  <p class="nombreevento">{{this.date}} </p>
+  <p class="nombreevento">{{this.location}} </p>
+    {{else}}
+    <p>There are no events yet! :(</p>
+</div>
+{{/each}}
