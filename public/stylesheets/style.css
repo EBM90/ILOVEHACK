@@ -19,16 +19,18 @@ a {
 }
 
 #form {
-  margin: 180px auto;
+  margin: 0 auto;
   width: 580px;
 }
 
 #form h2 {
-  margin-bottom: 30px;
+  padding-top: 20rem;
   text-align: center;
   font-size: 55px;
   font-family: "Orbitron", sans-serif;
 }
+
+
 
 #form label {
   color: #666;
@@ -66,6 +68,10 @@ a {
   transition: 0.3s ease background;
   width: 100%;
   height: 100px;
+}
+
+.sign-up {
+  padding-bottom: 5rem;
 }
 
 #form button:hover {
@@ -135,12 +141,12 @@ margin-top: 10px;
 .FAQ {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
 }
 .textoFAQ {
   display: flex;
   justify-content: center;
   font-size: 60px;
+  margin: 200px 0 150px 0;
 }
 .service-box {
   font-size: 1.7em;
@@ -178,8 +184,8 @@ margin-top: 10px;
 
 .navbar-brand img {
   border-radius: 0;
-  height: 2.5rem;
-  width: 3rem;
+  height: 5.5rem;
+  width: 6rem;
 }
 
 nav {
@@ -208,7 +214,7 @@ nav {
 }
 
 .sideNav img {
-  width: 20px;
+  width: 45px;
 }
 
 /* ANIMACION */
@@ -242,14 +248,18 @@ nav {
   padding-top: 80px;
 }
 
+.btnlog a button {
+  padding: 0 2rem;
+}
+
 .logo {
-  margin-left: 30px;
+  margin:10rem 5rem;
 }
 
 /* LOGIN */
 
 .loginbtn {
-  padding-top: 30px;
+  padding-top: 8rem;
 }
 
 .loginstc {
@@ -373,7 +383,7 @@ width: 70%;
 
 .eventtitle {
   font-size: 60px;
-  margin-top: 80px;
+  margin-top: 160px;
 }
 
 .nombreevento {
