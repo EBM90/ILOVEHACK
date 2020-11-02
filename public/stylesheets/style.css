@@ -5,9 +5,14 @@
   font-family: 'VT323', monospace;
 }
 
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+img{
+  border-radius: 50px;
 }
 
 a {
@@ -274,6 +279,7 @@ max-width: 500px;
 max-height: 800px;
 min-width: 400px;
 min-height: 700px;
+margin-top: 100px;
 }
 
 .profile-align{
