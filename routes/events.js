@@ -135,6 +135,34 @@ router.get("/events/edit", withAuth, function (req, res, next) {
 router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, next) => {
   const { name, description, date, location } = req.body;
   const imgPath = req.file.url;
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0");
+  var yyyy = today.getFullYear();
+
+  today = mm + dd + yyyy;
+  if (date < today) {
+    res.render("events/add-event", {
+      errorMessage: "The event has to happen in the future :)",
+    });
+    return;
+  } else if (name.length < 5) {
+    res.render("events/add-event", {
+      errorMessage: "Your event name should have at least 5 characters",
+    });
+    return;
+  } else if (description.length < 5) {
+    res.render("events/add-event", {
+      errorMessage: "Write a longer description!",
+    });
+    return;
+  } else if (location.length < 3) {
+    res.render("events/add-event", {
+      errorMessage:
+        "People will need to know where to go! Tell them the place ^^",
+    });
+    return;
+  }
 
   Event.update(
     { _id: req.query.event_id },
@@ -148,7 +176,12 @@ router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, ne
     });
 });
 
+//delete event
 
+router.post("/events/delete", withAuth, async (req, res, next) => {
+  await Event.deleteOne({ _id: req.query.event_id });
+    res.redirect("all-events");
+});
 
 
 

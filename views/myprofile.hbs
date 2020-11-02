@@ -13,9 +13,12 @@
   <p class="description">About you:{{ currentUserInfo.description}}. </p>
 </div>
 {{/if}}
-<div class="btnmatch">
-<a class="btnprofile" href="/fav-events"><button>FAV events</button></a>
 
-<a class="btnprofile" href="/matches"><button>Matches</button></a>
+<a href="/user/edit?user_id={{currentUserInfo._id}}"><button>Edit profile</button></a>
+
+<div class="btnmatch">
+<a class="btnprofile" href="/fav-events"><button>FAV events &#127775</button></a>
+
+<a class="btnprofile" href="/matches"><button>Matches &#127777</button></a>
 
 </div>
