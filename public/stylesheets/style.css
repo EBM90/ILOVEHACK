@@ -5,9 +5,14 @@
   font-family: 'VT323', monospace;
 }
 
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+img{
+  border-radius: 50px;
 }
 
 a {
@@ -100,16 +105,28 @@ form{
   
 }
 
-.pregunta{
+.question{
   margin-top: 60px;
 }
 
-.respuestas{
-  font-family:'VT323', monospace;
+.answers{
+  font-family:'VT323', monospace; 
 }
+
 
 .registrobtn{
   margin-top: 90px;
+}
+
+.genre{
+  display: flex;
+  flex-direction: row;
+}
+
+li{
+  display: inline-block;
+  position: relative;
+
 }
 
 /* .radio{
@@ -174,13 +191,6 @@ nav{
   margin-top: -50px;
 }
 
-
-
-/* FORMULARIO DE SIGN UP */
-.genero{
-  display: flex;
-  flex-direction: row;
-}
 /* ANIMACION */
 .ironman{
   margin-left: 40%;
@@ -201,11 +211,6 @@ nav{
 
 /* INDEX */
 
-.tituloindex{
-  font-size: 130px;
-  margin-left: 23%;
-  margin-top: 30%;
-}
 
 .btnlog{
   /* margin-left: 30%; */
@@ -245,7 +250,7 @@ nav{
   margin-left: 50%;
 }
 
-.descripcion{
+.description{
   font-size: 38px;
   /* margin-left: 26%;  */
   text-align: center;
@@ -266,7 +271,7 @@ nav{
 }
 
 .btnmatch{
-  margin-top: 260px;
+  margin-top: 60px;
 }
 
 .profileimg{
@@ -274,6 +279,7 @@ max-width: 500px;
 max-height: 800px;
 min-width: 400px;
 min-height: 700px;
+margin-top: 100px;
 }
 
 .profile-align{
@@ -306,7 +312,7 @@ align-items: center;
 }
 
 .btnevent{
-  
+  margin-left: 20px;
   padding-top: 30px;
 }
 
@@ -427,7 +433,6 @@ width: 53rem;
    align-items: center;
    justify-content: space-around;
  }
-
 
 
 
