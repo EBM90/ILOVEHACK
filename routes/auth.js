@@ -28,6 +28,7 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
   }
 
   const { fullname, password, repeatPassword, birthdate, gender, email, description, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, } = req.body;
+  console.log("req.body", req.body)
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -82,6 +83,7 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
       gender,
       email,
       description,
+      questions:[
       question1,
       question2,
       question3,
@@ -92,6 +94,7 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
       question8,
       question9,
       question10,
+    ],
       imgPath,
     });
     res.redirect("/login");

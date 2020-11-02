@@ -2,16 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
 
-
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-img{
+img {
   border-radius: 50px;
 }
 
@@ -24,12 +23,11 @@ a {
   width: 580px;
 }
 
-#form h2{
+#form h2 {
   margin-bottom: 30px;
   text-align: center;
   font-size: 55px;
-  font-family: 'Orbitron', sans-serif;
- 
+  font-family: "Orbitron", sans-serif;
 }
 
 #form label {
@@ -39,7 +37,7 @@ a {
   text-align: center;
   width: 100%;
   font-size: 46px;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   padding: 20px;
 }
 
@@ -84,49 +82,45 @@ a {
   padding: 20px;
   width: 100%;
 }
-.account-message{
+.account-message {
   font-size: 34px;
 }
 
-.signboton{
+.signboton {
   margin-top: 40px;
 }
 
-
 /* TEST */
-form{
-  font-size:31px;
+form {
+  font-size: 31px;
   /* font-family: 'VT323', monospace; */
 }
 
-.test1{
-  font-family: 'Orbitron', sans-serif;
+.test1 {
+  font-family: "Orbitron", sans-serif;
   font-size: 30px;
-  
 }
 
-.question{
+.question {
   margin-top: 60px;
 }
 
-.answers{
-  font-family:'VT323', monospace; 
+.answers {
+  font-family: "VT323", monospace;
 }
 
-
-.registrobtn{
+.registrobtn {
   margin-top: 90px;
 }
 
-.genre{
+.genre {
   display: flex;
   flex-direction: row;
 }
 
-li{
+li {
   display: inline-block;
   position: relative;
-
 }
 
 /* .radio{
@@ -137,62 +131,88 @@ width: 200px;
 margin-top: 10px;
 } */
 
-
 /* ESto es el estilo del FAQ */
-.FAQ{
-  display:flex;
+.FAQ {
+  display: flex;
   justify-content: center;
   margin-top: 70px;
 }
-.textoFAQ{
-display:flex;
+.textoFAQ {
+  display: flex;
   justify-content: center;
   font-size: 60px;
 }
 .service-box {
-font-size:1.7em;
-text-align:center;
-border: 2px solid #eee;
-border-radius: 20px;
-box-sizing: border-box;
-box-shadow: 2px 2px 10px 0 #eee;
-margin: 50px 5% 0 5%;
-padding: 20px;
-width: 90%;
-background-color:white;
-font-size: 35px;
+  font-size: 1.7em;
+  text-align: center;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px 0 #eee;
+  margin: 50px 5% 0 5%;
+  padding: 20px;
+  width: 90%;
+  background-color: white;
+  font-size: 35px;
 }
 .service-box img {
-height:125px;
+  height: 125px;
 }
-#structure > div{
-display: flex;
-justify-content: between;
-flex-direction: column;
-flex-wrap: wrap;
+#structure > div {
+  display: flex;
+  justify-content: between;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-#structure{
-background-image:url("") ;
-background-size: cover; 
+#structure {
+  background-image: url("");
+  background-size: cover;
 }
-
-
 
 /* NAVBAR */
-.navbar{
+.navbar {
   font-size: 47px;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
+  border-radius: 0;
 }
 
-nav{
-  margin-top: -25px;
-  width: 106%;
-  margin-left: -26px;
-  margin-top: -50px;
+.navbar-brand img {
+  border-radius: 0;
+  height: 2.5rem;
+  width: 3rem;
+}
+
+nav {
+  margin-top: 0;
+  width: 100%;
+  margin-left: 0;
+  position: fixed;
+}
+
+/* SIDEBAR */
+
+.sideNav {
+  width: 20px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 5px;
+  z-index: 21;
+}
+
+.sideNav img:hover {
+	width: 25px;
+}
+
+.sideNav img {
+  width: 20px;
 }
 
 /* ANIMACION */
-.ironman{
+.ironman {
   margin-left: 40%;
   margin-top: -190px;
   animation-name: ironman;
@@ -201,18 +221,15 @@ nav{
   margin-left: -25px;
   padding-left: 20px;
 }
-@keyframes ironman{
+@keyframes ironman {
   50% {
-
     transform: translate(0, 90px);
- }
-
+  }
 }
 
 /* INDEX */
 
-
-.btnlog{
+.btnlog {
   /* margin-left: 30%; */
   display: flex;
   justify-content: space-around;
@@ -225,38 +242,37 @@ nav{
   padding-top: 80px;
 }
 
-.logo{
+.logo {
   margin-left: 30px;
 }
 
 /* LOGIN */
 
-.loginbtn{
+.loginbtn {
   padding-top: 30px;
 }
 
-.loginstc{
+.loginstc {
   margin-top: 87px;
 }
 
-
 /* MY PROFILE */
-.greeting{
+.greeting {
   font-size: 38px;
   padding-top: 10%;
 }
-.fullname{
+.fullname {
   font-size: 38px;
   margin-left: 50%;
 }
 
-.description{
+.description {
   font-size: 38px;
   /* margin-left: 26%;  */
   text-align: center;
 }
 
-.btnprofile{
+.btnprofile {
   /* display: flex;
   justify-content: space-around; */
   box-sizing: border-box;
@@ -270,35 +286,33 @@ nav{
   /* padding-top: 80px; */
 }
 
-.btnmatch{
+.btnmatch {
   margin-top: 60px;
 }
 
-.profileimg{
-max-width: 500px;
-max-height: 800px;
-min-width: 400px;
-min-height: 700px;
-margin-top: 100px;
+.profileimg {
+  max-width: 500px;
+  max-height: 800px;
+  min-width: 400px;
+  min-height: 700px;
+  margin-top: 100px;
 }
 
-.profile-align{
+.profile-align {
   display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 
 /* ALL EVENTS */
-.eventalign{
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-
+.eventalign {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.btnprofile2{
+.btnprofile2 {
   /* display: flex;
   justify-content: space-around; */
   box-sizing: border-box;
@@ -311,41 +325,40 @@ align-items: center;
   margin-left: 230px;
 }
 
-.btnevent{
+.btnevent {
   margin-left: 20px;
   padding-top: 30px;
 }
 
-.eventtitle{
+.eventtitle {
   font-size: 60px;
   margin-top: 80px;
-  
 }
 
-.nombreevento{
+.nombreevento {
   font-size: 38px;
   padding-top: 50px;
   text-align: center;
 }
 
-.imgevent{
+.imgevent {
   padding-top: 100px;
   /* max-width: 600px;
 max-height: 700px;
 min-width: 600px;
 min-height: 700px; */
-width: 53rem;
+  width: 53rem;
 }
 
 /* ADD-EVENT */
 
-.tituloadd{
+.tituloadd {
   font-size: 56px;
   margin-left: 32%;
   padding-top: 40px;
   padding-bottom: 30px;
 }
-.descadd{
+.descadd {
   font-size: 36px;
   padding-bottom: 30px;
   display: flex;
@@ -353,12 +366,12 @@ width: 53rem;
   text-align: center;
 }
 
-.formadd{
+.formadd {
   margin-left: 22%;
   padding-bottom: 90px;
 }
 
-.addbtn{
+.addbtn {
   box-sizing: border-box;
   font-size: 50px;
   outline: 0;
@@ -369,25 +382,24 @@ width: 53rem;
   margin-left: 130px;
 }
 
-.align-allevent{
+.align-allevent {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.btnadd2{
+.btnadd2 {
   box-sizing: border-box;
   font-size: 50px;
   outline: 0;
   padding: 4px;
   width: 70%;
   margin-right: -33%;
-
 }
 
 /* EDIT EVENT */
 
-.btneditevent{
+.btneditevent {
   box-sizing: border-box;
   font-size: 50px;
   outline: 0;
@@ -397,46 +409,42 @@ width: 53rem;
   padding-right: 10px;
   margin-left: 60px;
   margin-top: 140px;
-  
 }
 
-.tituloedit{
+.tituloedit {
   margin-left: 41%;
   font-size: 52px;
 }
 
-.editform{
+.editform {
   margin-left: 27%;
   margin-top: 90px;
-  
 }
 
 /* EVENT DETAIL */
-.align-event-details{
+.align-event-details {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: -230px;
 }
- .img-eventdetails{
-   width: 53rem;
- }
+.img-eventdetails {
+  width: 53rem;
+}
 
- #event-details p{
-   font-size: 36px;
- }
- 
- .details-button{
-   font-size: 42px;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
- }
+#event-details p {
+  font-size: 36px;
+}
 
+.details-button {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-
- /* CAMARA */
+/* CAMARA */
 /* body {
   height: 100vh;
   display: flex;
