@@ -8,7 +8,7 @@
 {{#if isUserLoggedIn}}
 <div class="profile-align">
   <img class="profileimg" src="{{currentUserInfo.imgPath}}">
-  <a href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit Image</a>
+  <a class="edit-btn-myprofile" href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit Image</a>
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
   <p class="description">About you:{{ currentUserInfo.description}}. </p>
 </div>
