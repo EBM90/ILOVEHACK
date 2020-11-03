@@ -10,9 +10,7 @@ const uploadCloud = require('../config/cloudinary');
 
 
 //comparing users
-// router.get("/matches", function (req, res, next) {
-//     res.render("user/matches");
-//   });
+
 
 // router.post("/matches",uploadCloud.single("photo"), async (req, res, next) => {
 //     User.find()
@@ -68,13 +66,37 @@ const uploadCloud = require('../config/cloudinary');
 //     };
 // // });
 
-
-
-
 // router.post("/matches", withAuth, async (req, res, next) => {
 // const { question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, } = req.body;  
 // await User.findOne({ _id: req.query.user_id })
 // )};
+
+
+router.get("/user/matches", withAuth, uploadCloud.single("photo"), async (req, res, next) => {
+    User.find()
+        .then( allTheUsersFromDB => {
+            console.log('Retrieved users from DB:', allTheUsersFromDB);
+            res.render('user/matches', { user: allTheUsersFromDB });
+          })
+          .catch(error => {
+            next(error);
+          });
+});
+
+router.post("/user/matches", withAuth, async function (req, res, next) {
+    try {
+      const user = await User.find();
+    } catch (error) {
+      
+    }
+  });
+
+
+
+
+
+
+
 
 
 

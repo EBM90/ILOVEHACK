@@ -11,7 +11,6 @@ const userSchema = new Schema(
     email:String,
     description:String,
     imgPath: {type:String, default: 'linkimage'},
-    questions:[Number],
     question1:Number,
     question2:Number,
     question3:Number,
