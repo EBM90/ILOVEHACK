@@ -40,6 +40,11 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
       });
       return;
     }
+    const d = date;
+    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+    const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+    const niceDate = `${da}-${mo}-${ye}`;
 
     try {
       const event = await Event.findOne({ name: name, date: date });
@@ -177,17 +182,17 @@ router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, ne
 });
 
 //edit event picture
-router.get("/event/editPhoto", withAuth, function (req, res, next) {
+router.get("/events/editPhoto", withAuth, function (req, res, next) {
   Event.findOne({ _id: req.query.event_id })
     .then((event) => {
-      res.render("event/edit-photo", { event });
+      res.render("events/edit-photo", { event });
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
-router.post("/event/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
+router.post("/events/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
   const imgPath = req.file.url;
 
   await Event.updateOne(

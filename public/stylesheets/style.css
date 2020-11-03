@@ -97,7 +97,7 @@ a {
 }
 
 /* TEST */
-form {
+#form {
   font-size: 31px;
   /* font-family: 'VT323', monospace; */
 }
@@ -105,29 +105,60 @@ form {
 .test1 {
   font-family: "Orbitron", sans-serif;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .question {
   margin-top: 60px;
+  width: 100%;
 }
 
+.question-container{
+  width: 100%;
+  border-bottom: 1px solid darkslategray;
+}
 .answers {
   font-family: "VT323", monospace;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.the-answers {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.separate-boxes-list{
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .registrobtn {
   margin-top: 90px;
 }
 
-.genre {
+.gender {
   display: flex;
   flex-direction: row;
 }
 
-li {
+.gender div{
+  display: flex;
+  flex-direction: row;
+}
+
+/* li {
   display: inline-block;
   position: relative;
-}
+} */
 
 /* .radio{
   float: right; 
@@ -259,6 +290,12 @@ nav {
   margin:10rem 5rem;
 }
 
+.index-align {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 /* LOGIN */
 
 .loginbtn {
@@ -371,6 +408,21 @@ width: 70%;
   margin-left: 120px;
 }
 
+.btnedituser{
+  box-sizing: border-box;
+  font-size: 50px;
+  outline: 0;
+  padding: 1px;
+  width: 67%;
+  margin-bottom: 20px;
+  margin-top: 140px;
+  text-align: center;
+}
+
+.tituloedit { 
+  font-size: 62px;
+  padding-bottom: 12rem;
+}
 
 /* ALL EVENTS */
 .eventalign {
@@ -394,7 +446,10 @@ width: 70%;
 
 
 .btnevent {
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 30px;
 }
 
@@ -410,7 +465,8 @@ width: 70%;
 }
 
 .imgevent {
-  padding-top: 100px;
+  margin-top: 100px;
+  
   /* max-width: 600px;
 max-height: 700px;
 min-width: 600px;
@@ -468,8 +524,11 @@ min-height: 700px; */
   font-size: 50px;
   outline: 0;
   padding: 4px;
-  width: 70%;
-  margin-right: -38%;
+  margin: 4px;
+}
+
+.click-me {
+  padding: 0 40px;
 }
 
 /* EDIT EVENT */
@@ -488,14 +547,13 @@ min-height: 700px; */
   margin-top: 140px;
 }
 
-.tituloedit {
-  margin-left: 41%;
-  font-size: 52px;
-}
+
 
 .editform {
-  margin-left: 27%;
-  margin-top: 90px;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-edit-event{
@@ -518,16 +576,21 @@ min-height: 700px; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: -180px;
+  margin-top: 0;
+  
 }
+
+  .align-event-details h2 {
+padding-top: 15rem;
+font-size: 42px;
+  }
+
  .img-eventdetails{
    width: 53rem;
-   margin-left: 16px;
  }
 
  #event-details p{
    font-size: 36px;
-   
  }
  
  .details-button{
@@ -550,6 +613,7 @@ min-height: 700px; */
 #event-details p {
   font-size: 36px;
 }
+
 .details-button {
   font-size: 42px;
   display: flex;
@@ -565,7 +629,7 @@ min-height: 700px; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 300px
+  padding-top: 220px
 }
 
 .edit-photo-profile > img{
@@ -669,3 +733,40 @@ min-height: 700px; */
     -110px 32px 15px 13px rgba(0,0,0,0.25); 
 }
 
+/* 3D button */
+
+@import "compass/css3";
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+.futurist-button {
+  background: #202224;
+  background-image: -webkit-linear-gradient(top, #202224, #77838a);
+  background-image: -moz-linear-gradient(top, #202224, #77838a);
+  background-image: -ms-linear-gradient(top, #202224, #77838a);
+  background-image: -o-linear-gradient(top, #202224, #77838a);
+  background-image: linear-gradient(to bottom, #202224, #77838a);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  text-shadow: 4px 3px 3px #666666;
+  font-family: Courier New;
+  color: #cfc9cf;
+  font-size: 50px;
+  padding: 11px 20px 10px 20px;
+  border: solid #33393d 7px;
+  text-decoration: none;
+}
+
+.futurist-button:hover {
+  background: #a1a5a8;
+  background-image: -webkit-linear-gradient(top, #a1a5a8, #212324);
+  background-image: -moz-linear-gradient(top, #a1a5a8, #212324);
+  background-image: -ms-linear-gradient(top, #a1a5a8, #212324);
+  background-image: -o-linear-gradient(top, #a1a5a8, #212324);
+  background-image: linear-gradient(to bottom, #a1a5a8, #212324);
+  text-decoration: none;
+}
+
+/* END OF 3D BUTTON */

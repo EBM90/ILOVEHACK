@@ -1,17 +1,21 @@
-<form class="edit-user" action="/user/edit?user_id={{user._id}}" method="post" enctype="multipart/form-data">
 
+
+
+
+<form class="edit-user" action="/user/edit?user_id={{user._id}}" method="post" enctype="multipart/form-data">
+<h1 class="tituloedit">Edit your profile info</h1>
   <br />
   <label for="email">E-mail</label>
   <input type="email" name="email" value="{{user.email}}" />
 
 
   <br />
-  <label for="password">Password</label>
-  <input type="password" name="password" value="{{user.password}}" required />
+  <label for="password">Password*</label>
+  <input type="password" name="password"  required />
 
 
   <br />
-  <label for="repeatPassword">Repeat password</label>
+  <label for="repeatPassword">Repeat password*</label>
   <input type="password" name="repeatPassword" required />
 
 
@@ -23,7 +27,6 @@
   <label for="description">Description</label>
   <input type="text" name="description" value="{{user.description}}" />
 
-  <input class="img-edit-btn" type="file" name="photo" value="{{user.imgPath}}" />
   <div class="edit-btn">
     <button type="submit">Edit profile</button>
 </form>
