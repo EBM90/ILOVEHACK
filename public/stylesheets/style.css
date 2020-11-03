@@ -534,6 +534,12 @@ min-height: 700px; */
 #event-details p {
   font-size: 36px;
 }
+.details-button {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 
 /* EDIT PHOTO */
@@ -556,12 +562,6 @@ min-height: 700px; */
 
 *, *:after, *:before { 
   box-sizing: border-box;}
-.details-button {
-  font-size: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
 #switch {
    visibility:hidden;
