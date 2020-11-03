@@ -429,7 +429,9 @@ width: 53rem;
 }
 
 /* EDIT EVENT */
-
+.align-event-edit{
+  margin-top: 100px;
+}
 .btneditevent{
   box-sizing: border-box;
   font-size: 50px;
@@ -454,16 +456,31 @@ width: 53rem;
   
 }
 
+.btn-edit-event{
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.btn-delete{
+  width: 50%;
+  font-size: 50px;
+  margin-left: 26%;
+  
+}
+
 /* EVENT DETAIL */
 .align-event-details{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: -230px;
+  margin-top: -180px;
 }
  .img-eventdetails{
    width: 53rem;
+   margin-left: 16px;
  }
 
  #event-details p{
@@ -479,6 +496,13 @@ width: 53rem;
  }
 .edit-event-btn{
   margin-left: 70px;
+}
+
+.btn-light-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
 }
 
 
