@@ -96,29 +96,23 @@ router.get(
     };
     //points(searchUser, usuario2);
     const bestMatch = (searchUser, genderArr) => {
-      const results = genderArr.map((user) => {
+      const results = genderArr.filter((user) => {
         const pts = points(searchUser, user);
         //console.log(pts);
-        if (pts > 7) {
+        if (pts >= 7) {
           return user;
-        } else {
-          return false;
-        }
+        } 
       });
       return results;
     };
     
     console.log(bestMatch(searchUser, genderArr));
 
-    let matchList = bestMatch(searchUser, genderArr);
+
+    let matchList = (bestMatch(searchUser, genderArr));
     
 
       res.render("user/matches", { matchList });
-
-
-
-
-
 
     } catch (error) {
       next(error);
