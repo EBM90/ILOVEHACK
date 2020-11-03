@@ -8,17 +8,20 @@
 {{#if isUserLoggedIn}}
 <div class="profile-align">
   <img class="profileimg" src="{{currentUserInfo.imgPath}}">
-  <a class="edit-btn-myprofile" href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit Image</a>
+  <i class="align-edite-image">
+  <a class="edit-btn-myprofile" href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit image</a>
+  <a class="edit-profile" href="/user/edit?user_id={{currentUserInfo._id}}">Edit info</a>
+  </i>
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
-  <p class="description">About you:{{ currentUserInfo.description}}. </p>
+  <p class="description">About you: {{ currentUserInfo.description}}. </p>
 </div>
 {{/if}}
 
-<a class="edit-profile" href="/user/edit?user_id={{currentUserInfo._id}}"><button>Edit profile</button></a>
+
 
 <div class="btnmatch">
-<a class="btnprofile" href="/fav-events"><button>FAV events &#127775</button></a>
+<a class="btnprofile" href="/fav-events"><button>FAV events</button></a>
 
-<a class="btnprofile" href="/user/matches?user_id={{currentUserInfo._id}}"><button>Matches &#127777</button></a>
+<a class="btnprofile" href="/user/matches?user_id={{currentUserInfo._id}}"><button>Matches</button></a>
 
 </div>
