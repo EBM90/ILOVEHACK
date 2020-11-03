@@ -58,8 +58,7 @@ router.get("/user/edit", withAuth, function (req, res, next) {
 });
 
 router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
-  const { fullname, password, repeatPassword, email, description } = req.body;
-  const imgPath = req.file.url;
+  const { fullname, password, repeatPassword, user, email, description } = req.body;
 
   try {
   if (password.length < 8){
@@ -77,7 +76,7 @@ router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res
       errorMessage: "Your match will need to know how to call you ;)",
     });
     return;
-  }else if (description.length < 140){
+  }else if (description.length < 10){
     res.render("user/edit", {
       errorMessage: "Tell your future match a bit more about yourself!",
     });
