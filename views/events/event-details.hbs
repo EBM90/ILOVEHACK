@@ -3,6 +3,7 @@
     {{#each event}}
     <div class="eventalign" id="event-details">
         <img class="img-eventdetails" src="{{this.imgPath}}">
+        <a href="/events/editPhoto?event_id={{event._id}}">Edit Image</a>
         <p>{{this.name}} </p>
         <p>{{this.date}} </p>
         <p>{{this.location}} </p>

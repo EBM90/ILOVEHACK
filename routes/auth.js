@@ -27,13 +27,14 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
     return;
   }
 
-  const { fullname, password, repeatPassword, birthdate, gender, email, description } = req.body;
+  const { fullname, password, repeatPassword, birthdate, gender, email, description, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, } = req.body;
+  console.log("req.body", req.body)
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); 
   var yyyy = today.getFullYear() - 18;
-
+  let birthday= {day: req.body.day}
   today = mm + dd + yyyy;
   if (birthdate < today){
     res.render("auth/signup", {
@@ -82,6 +83,18 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
       gender,
       email,
       description,
+      questions:[
+      question1,
+      question2,
+      question3,
+      question4,
+      question5,
+      question6,
+      question7,
+      question8,
+      question9,
+      question10,
+    ],
       imgPath,
     });
     res.redirect("/login");
@@ -136,7 +149,7 @@ router.post("/login", async (req, res, next) => {
 
 router.get("/logout", withAuth, (req, res, next) => {
   res.cookie("token", "", { expires: new Date(0) });
-  res.redirect("/index");
+  res.redirect("/");
 });
 
 

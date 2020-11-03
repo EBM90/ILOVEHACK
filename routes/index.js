@@ -77,7 +77,7 @@ router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res
       errorMessage: "Your match will need to know how to call you ;)",
     });
     return;
-  }else if (description.length < 10){
+  }else if (description.length < 140){
     res.render("user/edit", {
       errorMessage: "Tell your future match a bit more about yourself!",
     });
@@ -91,7 +91,7 @@ const hashPass = await bcrypt.hashSync(password, salt);
 
   await User.updateOne(
     { _id: req.query.user_id },
-    { $set: { fullname, password: hashPass, repeatPassword, email, description, imgPath } }, { new: true }
+    { $set: { fullname, password: hashPass, repeatPassword, email, description } }, { new: true }
   )
     .then((user) => {
       res.redirect("/myprofile");
@@ -99,6 +99,34 @@ const hashPass = await bcrypt.hashSync(password, salt);
     .catch((error) => {
       console.log(error); 
     });
+});
+
+//edit user picture
+router.get("/user/editPhoto", withAuth, function (req, res, next) {
+  User.findOne({ _id: req.query.user_id })
+    .then((user) => {
+      res.render("user/edit-photo", { user });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/user/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
+  try {
+
+  const imgPath = req.file.url;
+
+  let user = await User.findByIdAndUpdate(
+    { _id: req.query.user_id },
+    { $set: { imgPath } }, { new: true },
+  )
+    if (user) {
+      res.redirect("/myprofile");
+    }
+  } catch (error) {
+    console.log(error); 
+  }
 });
 
 //delete account

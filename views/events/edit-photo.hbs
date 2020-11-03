@@ -1,0 +1,9 @@
+<h1 class="tituloedit">Attach your new event photo here!</h1>
+
+<img src="{{event.imgPath}}" alt="{{event.name}}">
+
+<form class="editform" action="/events/editPhoto?event_id={{event._id}}" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" required/>
+    </br>
+    <button class="btneditevent" type="submit">EDIT</button>
+</form>

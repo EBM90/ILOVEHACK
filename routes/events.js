@@ -176,6 +176,32 @@ router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, ne
     });
 });
 
+//edit event picture
+router.get("/event/editPhoto", withAuth, function (req, res, next) {
+  Event.findOne({ _id: req.query.event_id })
+    .then((event) => {
+      res.render("event/edit-photo", { event });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/event/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
+  const imgPath = req.file.url;
+
+  await Event.updateOne(
+    { _id: req.query.event_id },
+    { $set: { imgPath } }, { new: true },
+  )
+    .then((event) => {
+      res.redirect("/all-events");
+    })
+    .catch((error) => {
+      console.log(error); 
+    });
+});
+
 //delete event
 
 router.post("/events/delete", withAuth, async (req, res, next) => {
