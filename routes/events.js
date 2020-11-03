@@ -211,9 +211,9 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 
 // FAV EVENTS
 
-router.post("/user/fav-events", withAuth, async (req, res, next) => {
-  await Event.add({ _id: req.query.event_id });
-    res.redirect("");
-});
+// router.post("/user/fav-events", withAuth, async (req, res, next) => {
+//   await Event.add({ _id: req.query.event_id });
+//     res.redirect("");
+// });
 
 module.exports = router;

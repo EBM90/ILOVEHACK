@@ -1,11 +1,12 @@
 <p>There are no matches to show yet, sometimes love takes a bit longer, but do not give up!</p>
 
 
-{{#each user}}
+{{#each genderArr}}
 <div class="profile-align">
   <img class="profileimg" src="{{this.imgPath}}">
   <p class="greeting"> Hello, {{ this.fullname }} </p>
   <p class="description">About you:{{ this.description}}. </p>
+  <p class="description">Gender:{{ this.gender}}. </p>
 </div>
 {{else}}
 <p>tus ojos gitanos me molan, bebé</p>

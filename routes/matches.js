@@ -1,16 +1,13 @@
-const { UnsupportedMediaType } = require("http-errors")
+const { UnsupportedMediaType } = require("http-errors");
 var express = require("express");
 var router = express.Router();
 const withAuth = require("../helpers/middleware");
 
 const User = require("../models/user");
 const Event = require("../models/events");
-const uploadCloud = require('../config/cloudinary');
-
-
+const uploadCloud = require("../config/cloudinary");
 
 //comparing users
-
 
 // router.post("/matches",uploadCloud.single("photo"), async (req, res, next) => {
 //     User.find()
@@ -25,7 +22,7 @@ const uploadCloud = require('../config/cloudinary');
 //     const { question1, question2, question3, question4, question5, question6, question7, question8, question9, question10 } = req.body;
 
 //     const score = [];
-    
+
 //     try {
 //         const user = await User.find();
 //       } catch (error) { console.log("Users not found")}
@@ -39,7 +36,6 @@ const uploadCloud = require('../config/cloudinary');
 //     } else {
 //         console.log('Arrays are not equal.');
 //     }
-
 
 //     if (userX.question1.value === userY.question1.value) {
 //         return score += 1;
@@ -66,38 +62,29 @@ const uploadCloud = require('../config/cloudinary');
 //     };
 // // });
 
-// router.post("/matches", withAuth, async (req, res, next) => {
-// const { question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, } = req.body;  
-// await User.findOne({ _id: req.query.user_id })
-// )};
+router.get("/user/matches", withAuth, uploadCloud.single("photo"),async (req, res, next) => {
+    try {
+      const allUsers = await User.find();
+      // console.log('Retrieved users from DB:', allTheUsersFromDB);
+      const searchUser = await User.findById(req.query.user_id);
+
+      const genderArr = allUsers.filter((d) => d.gender !== searchUser.gender);
+      console.log("genderArr", genderArr);
+      console.log(searchUser, "searchUser", allUsers, "AllUsers");
+      res.render("user/matches", { genderArr });
+    } catch (error) {
+      next(error);
+      return;
+    }
+  }
+);
 
 
-router.get("/user/matches", withAuth, uploadCloud.single("photo"), async (req, res, next) => {
-    User.find()
-        .then( allTheUsersFromDB => {
-            console.log('Retrieved users from DB:', allTheUsersFromDB);
-            res.render('user/matches', { user: allTheUsersFromDB });
-          })
-          .catch(error => {
-            next(error);
-          });
-});
 
 router.post("/user/matches", withAuth, async function (req, res, next) {
-    try {
-      const user = await User.find();
-    } catch (error) {
-      
-    }
-  });
-
-
-
-
-
-
-
-
-
+  try {
+    const user = await User.find();
+  } catch (error) {}
+});
 
 module.exports = router;
