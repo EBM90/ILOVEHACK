@@ -24,8 +24,8 @@
   <input type="text" name="description" value="{{user.description}}" />
     
     <input class="img-edit-btn" type="file" name="photo"  value="{{user.imgPath}}"/>
-{{!-- <div class="edit-btn"> --}}
+<div class="edit-btn">
   <button  type="submit">Edit profile</button>
 </form>
 <form action="/user/delete?user_id={{user._id}}" method="post"><button class="delete-profile-btn"  type="submit">Delete account</button></form>
-{{!-- </div> --}}
+</div>

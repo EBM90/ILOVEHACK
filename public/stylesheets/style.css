@@ -280,6 +280,7 @@ nav {
   font-size: 38px;
   /* margin-left: 26%;  */
   text-align: center;
+  margin: 0 10px;
 }
 
 .btnprofile {
@@ -292,7 +293,7 @@ nav {
   width: 100%;
   margin-bottom: 20px;
   padding-right: 100px;
-  margin-left: 82px;
+  margin-left: 120px;
   /* padding-top: 80px; */
 }
 
@@ -305,7 +306,7 @@ nav {
   max-height: 800px;
   min-width: 400px;
   min-height: 700px;
-  margin-top: 100px;
+  margin-top: 170px;
 }
 
 .profile-align {
@@ -321,7 +322,9 @@ nav {
   justify-content: center;
   font-size: 36px;
 }
-
+.edit-btn-myprofile{
+  font-size: 35px;
+}
 /* EDIT USER */
 
 .edit-user{
@@ -331,6 +334,7 @@ nav {
   flex-direction: column;
   font-size: 40px;
   padding-top: 10px;
+  padding-top: 200px;
 }
 
 .edit-user >input{
@@ -375,6 +379,7 @@ width: 70%;
   padding-right: 10px;
   margin-left: 230px;
 }
+
 
 .btnevent {
   margin-left: 20px;
@@ -452,8 +457,10 @@ min-height: 700px; */
 }
 
 /* EDIT EVENT */
-
-.btneditevent {
+.align-event-edit{
+  margin-top: 100px;
+}
+.btneditevent{
   box-sizing: border-box;
   font-size: 50px;
   outline: 0;
@@ -475,16 +482,31 @@ min-height: 700px; */
   margin-top: 90px;
 }
 
+.btn-edit-event{
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.btn-delete{
+  width: 50%;
+  font-size: 50px;
+  margin-left: 26%;
+  
+}
+
 /* EVENT DETAIL */
 .align-event-details {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: -230px;
+  margin-top: -180px;
 }
  .img-eventdetails{
    width: 53rem;
+   margin-left: 16px;
  }
 
  #event-details p{
@@ -502,14 +524,16 @@ min-height: 700px; */
   margin-left: 70px;
 }
 
+.btn-light-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
 #event-details p {
   font-size: 36px;
 }
-
-@import "compass/css3";
-
-*, *:after, *:before { 
-  box-sizing: border-box;
 .details-button {
   font-size: 42px;
   display: flex;
@@ -517,87 +541,32 @@ min-height: 700px; */
   justify-content: space-around;
 }
 
-/* CAMARA */
-/* body {
-  height: 100vh;
+
+/* EDIT PHOTO */
+
+.edit-photo-profile{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-top: 300px
 }
-.camera {
-  width: 200px;
-  height: 225px;
-  position: relative;
+
+.edit-photo-profile > img{
+  width: 50%
 }
-.bottom {
-  position: absolute;
-  height: 225px;
-  width: 200px;
-  background: #b4ab9c;
-  border-radius: 20px;
-}
-.bottom::after {
-  content: "";
-  width: 80%;
-  position: absolute;
-  height: 15px;
-  background-color: #403d37;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%);
-}
-.top {
-  position: absolute;
-  height: 170px;
-  width: 200px;
-  background: #d3c8b6;
-  background-image: radial-gradient(circle at 50% 34%, #d3c8b6, #d3c8b6 3px, transparent 5px), radial-gradient(circle at 55% 38%, #d3c8b6, #d3c8b6 1px, transparent 3px), radial-gradient(circle at 50% 40%, #607e7c, #607e7c 20px, #455 20px, #455 25px, #403d37 25px, #403d37 40px, transparent 40px), linear-gradient(to bottom, #d3c8b6, #d3c8b6 60%, #ccc1b0 60%, #ccc1b0 80%, #d3c8b6 80%, #b4ab9c 80%);
-  border-radius: 20px 20px 0 0;
-}
-.top::after {
-  content: "";
-  width: 50px;
-  height: 1px;
-  border-radius: 0 0 50% 50%;
-  background-color: #403d37;
-  position: absolute;
-  bottom: 72px;
-  left: 50%;
-  transform-origin: bottom;
-  transform: translate(-50%);
-  animation: close 3s infinite;
-}
-.top::before {
-  content: "";
-  width: 50px;
-  height: 1px;
-  border-radius: 50% 50% 0 0;
-  background-color: #403d37;
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform-origin: top;
-  transform: translate(-50%);
-  animation: close 3s infinite;
-}
-.lens {
-  position: absolute;
-  height: 170px;
-  width: 200px;
-  border-radius: 20px 20px 0 0;
-  background-image: radial-gradient(circle at 50% 40%, transparent, transparent 25px, #403d37 25px, #403d37 40px, transparent 40px);
-}
-.details {
-  position: absolute;
-  height: 170px;
-  width: 200px;
-  background-image: radial-gradient(circle at 18% 40%, #f95251, #f95251 10px, #b4ab9c 10px, #b4ab9c 12px, transparent 12px), radial-gradient(circle at 85% 38%, #403d37, #403d37 8px, #b4ab9c 8px, #b4ab9c 10px, transparent 10px);
-}
+
+  
+/* LIGHT BUTTON */
+@import "compass/css3";
+
+*, *:after, *:before { 
+  box-sizing: border-box;}
 
 #switch {
    visibility:hidden;
   clip:rect(0 0 0 0);
-  /* position: absolute; */
+  /* position: absolute;  */
   left: 9999px;
 }
 
