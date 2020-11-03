@@ -82,6 +82,7 @@ router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res
     });
     return;
   }
+  
 } catch (error) {
   console.log(error);
 }

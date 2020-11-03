@@ -73,4 +73,13 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+//for the radio imputs to be checked
+// hbs.registerHelper ("setChecked", function (value, currentValue) {
+//   if ( value == currentValue ) {
+//      return "checked";
+//   } else {
+//      return "";
+//   }
+// });
+
 module.exports = app;
