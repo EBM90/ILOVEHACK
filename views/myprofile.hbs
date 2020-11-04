@@ -5,10 +5,8 @@
 {{!-- {{#if isUserLoggedIn}}
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
 {{/if}} --}}
-
 {{#if isUserLoggedIn}}
-
-<div class="profile-align img-frame">
+<div class="profile-align">
   <img class="profileimg" src="{{currentUserInfo.imgPath}}">
   <i class="align-edite-image">
   <a class="edit-btn-myprofile" href="/user/editPhoto?user_id={{currentUserInfo._id}}">Edit image</a>
@@ -17,7 +15,6 @@
   <p class="greeting"> Hello, {{ currentUserInfo.fullname }}, ready for looking for your heart hacker? </p>
   <p class="description">About you: {{ currentUserInfo.description}}. </p>
 </div>
-
 {{/if}}
 
 
