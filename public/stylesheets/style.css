@@ -8,6 +8,12 @@
 body {
   /* padding: 50px; */
   font: 34px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 img {
@@ -29,8 +35,6 @@ a {
   font-size: 55px;
   font-family: "Orbitron", sans-serif;
 }
-<<<<<<< HEAD
-=======
 #form h3 {
   padding-top: 10rem;
   text-align: center;
@@ -38,7 +42,6 @@ a {
   font-family: "Orbitron", sans-serif;
 }
 
->>>>>>> joseluis
 
 #form label {
   color: #666;
@@ -457,7 +460,12 @@ width: 70%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 10%;
+  background-color:  #ECECF0;
+  font-weight: bolder;
+  text-align: left;
 }
 .btnprofile2 {
   /* display: flex;
@@ -472,7 +480,6 @@ width: 70%;
   margin-left: 230px;
 }
 
-
 .btnevent {
   display: flex;
   flex-direction: column;
@@ -483,23 +490,44 @@ width: 70%;
 
 .eventtitle {
   font-size: 60px;
-  margin-top: 160px;
+  margin: 200px 1rem 80px;
+  background-color: #000C66;
+  color: white;
+  padding: 2rem ;
 }
 
 .nombreevento {
   font-size: 38px;
-  padding-top: 50px;
-  text-align: center;
+  padding-top: 1rem;
+  text-align: left;
 }
 
 .imgevent {
   margin-top: 100px;
+  border: 0.15rem solid white;
   
   /* max-width: 600px;
 max-height: 700px;
 min-width: 600px;
 min-height: 700px; */
   width: 53rem;
+}
+
+.all-events-button {
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: "VT323", monospace;
+  color: #ffffff;
+  font-size: 30px;
+  background: #1E3AA4;
+  padding: 14px 20px 10px 20px;
+  text-decoration: none;
+  border: 0.5rem outset  black;
+}
+
+.all-events-button:hover {
+  text-decoration: none;
 }
 
 /* ADD-EVENT */
@@ -545,6 +573,7 @@ min-height: 700px; */
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #ECECF0;
 }
 
 .btnadd2 {
@@ -791,9 +820,24 @@ font-size: 42px;
   text-decoration: none;
 }
 
+/* FOOTER */
+
+footer {
+  text-align: center;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #ECECF0;
+  width: 100%;
+
+}
+
+/* END OF FOOTER */
+
+
 /* END OF 3D BUTTON */
 
-<<<<<<< HEAD
 
 .shake{
   animation: glitch 1s linear infinite;
@@ -852,7 +896,6 @@ font-size: 42px;
   62%{
     transform: translate(-22px,5px) skew(21deg); 
   }
-=======
 /* RESPONSIVE */
 
 @media screen and (min-width:900px){
@@ -896,5 +939,4 @@ nav {
  margin-left: 140px;
 }
 
->>>>>>> joseluis
 }

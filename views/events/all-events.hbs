@@ -6,10 +6,12 @@
 {{#each events}}
 <div class="eventalign">
   <img class="imgevent" src="{{this.imgPath}}">
-  <p class="nombreevento">{{this.name}} <a href="/events/event-details/{{this._id}}"></i><button class="click-me">Event details</button></a></p>
+  <p class="nombreevento">{{this.name}} 
   <p class="nombreevento">{{this.date}} </p>
   <p class="nombreevento">{{this.location}} </p>
+  <a href="/events/event-details/{{this._id}}"><button class="all-events-button" >Event details</button></a>
+   </div>
     {{else}}
     <p>There are no events yet! :(</p>
-</div>
+
 {{/each}}

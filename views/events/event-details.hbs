@@ -1,17 +1,17 @@
 {{!-- {{event.length}} participants --}}
 <div class="align-event-details">
     <h2>Event details</h2>
-    {{#each event}}
+    {{#if event}}
     <div class="eventalign" id="event-details">
-        <img class="img-eventdetails" src="{{this.imgPath}}">
-        <p>{{this.name}} </p>
-        <p>{{this.date}} </p>
-        <p>{{this.location}} </p>
-        <p>{{this.description}} </p>
+        <img class="img-eventdetails" src="{{event.imgPath}}">
+        <p>{{event.name}} </p>
+        <p>{{event.date}} </p>
+        <p>{{event.location}} </p>
+        <p>{{event.description}} </p>
        </div>
     {{else}}
         <p>There are no details yet! :(</p>
-    {{/each}}
+    {{/if}}
     
     <i class="details-button">
     <a class="edit-event-btn" href="/attend-event/{{event._id}}"><button>Attend event</button></a>
