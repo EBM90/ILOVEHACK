@@ -2,7 +2,7 @@
 <h1 class="tituloedit">Edit event</h1>
 
 
-<form class="editform" action="/events/edit?event_id={{event._id}}" method="post" enctype="multipart/form-data">
+<form class="editform1" action="/events/edit?event_id={{event._id}}" method="post" enctype="multipart/form-data">
 
   <label for="name">Event name</label>
   <input type="text" name="name" value="{{event.name}}" placeholder="The event name goes here" />
@@ -20,7 +20,7 @@
   <input type="file" name="photo" value="{{event.imgPath}}" />
 </br>
 {{!-- <div class="btn-edit-event"> --}}
-  <button class="btneditevent" type="submit">EDIT</button>
+  <button class="btneditevent1" type="submit">EDIT</button>
 </form>
 <form action="/events/delete?event_id={{event._id}}" method="post"><button class="btn-delete" type="submit">Delete event</button></form>
 {{!-- </div> --}}
