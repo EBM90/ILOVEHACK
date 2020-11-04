@@ -38,6 +38,7 @@ router.get('/myprofile', withAuth, async (req, res, next)=>{
   console.log(userId)
   try {
   const user= await User.findById(userId);
+  console.log(user ,"julian");
   res.render('myprofile', {user});
   } catch (error) {
     next(error)
@@ -47,8 +48,8 @@ router.get('/myprofile', withAuth, async (req, res, next)=>{
 
 //edit user profile
 
-router.get("/user/edit", withAuth, function (req, res, next) {
-  User.findOne({ _id: req.query.user_id })
+router.get("/user/edit", withAuth, async (req, res, next) => {
+  await User.findOne({ _id: req.query.user_id })
     .then((user) => {
       res.render("user/edit-user", { user });
     })
@@ -57,9 +58,9 @@ router.get("/user/edit", withAuth, function (req, res, next) {
     });
 });
 
-router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
+router.post("/user/edit", withAuth, async (req, res, next) => {
   const { fullname, password, repeatPassword, user, email, description } = req.body;
-
+console.log(req.body,"hola")
   try {
   if (password.length < 8){
     res.render("user/edit", {
@@ -82,35 +83,32 @@ router.post("/user/edit", uploadCloud.single("photo"), withAuth, async (req, res
     });
     return;
   }
+  const salt = await bcrypt.genSaltSync(10);
+const hashPass = await bcrypt.hashSync(password, salt);
+
+  await User.findByIdAndUpdate(
+    req.query.user_id,
+    { $set: { fullname, password: hashPass, repeatPassword, email, description } }, { new: true }
+  )
+    
+      res.redirect("/myprofile");
   
 } catch (error) {
   console.log(error);
 }
-const salt = await bcrypt.genSaltSync(10);
-const hashPass = await bcrypt.hashSync(password, salt);
-
-  await User.updateOne(
-    { _id: req.query.user_id },
-    { $set: { fullname, password: hashPass, repeatPassword, email, description } }, { new: true }
-  )
-    .then((user) => {
-      res.redirect("/myprofile");
-    })
-    .catch((error) => {
-      console.log(error); 
-    });
 });
 
 //edit user picture
-router.get("/user/editPhoto", withAuth, function (req, res, next) {
-  User.findOne({ _id: req.query.user_id })
-    .then((user) => {
+router.get("/user/editPhoto", withAuth, async (req, res, next) =>{ 
+  try{
+  const user= await User.findOne({ _id: req.query.user_id })
+    
       res.render("user/edit-photo", { user });
-    })
-    .catch((error) => {
+    }
+    catch(error) {
       console.log(error);
-    });
-});
+    };
+  });
 
 router.post("/user/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
   try {
@@ -118,7 +116,7 @@ router.post("/user/editPhoto", uploadCloud.single("photo"), withAuth, async (req
   const imgPath = req.file.url;
 
   let user = await User.findByIdAndUpdate(
-    { _id: req.query.user_id },
+     req.query.user_id ,
     { $set: { imgPath } }, { new: true },
   )
     if (user) {
