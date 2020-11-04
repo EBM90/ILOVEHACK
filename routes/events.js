@@ -99,33 +99,8 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
     .then(event => {
       res.render("events/event-details", { event })
     })
-})
+});
 
-// router.get("/attend-event", withAuth, async (req, res, next) => {
-//   try {
-//     const { _id } = req.session.currentUser
-//     const data = await Event.find()
-//     const attendEvent = await User.findOne({ _id })
-//     const newAttendEvent = []
-
-//     for (attend of data) {
-//       let iWillAttend = false
-//       attendEvent.events.forEach(userAttend => {
-//         if (attend._id.equals(userAttend._id)) {
-//           iWillAttend = true
-//         }
-//       })
-//       if (!iWillAttend) {
-//         newAttendEvent.push(attend)
-//       }
-//     }
-//     res.render("/events/attend-event", { newAttendEvent })
-//   }
-//   catch (error) {
-//     console.log('Error finding event', error)
-//   }
-
-// })
 
 router.get("/events/edit", withAuth, function (req, res, next) {
   Event.findOne({ _id: req.query.event_id })
@@ -223,5 +198,69 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 
 // const eventFav = document.querySelector("attend-btn");
 // eventFav.addEventListener("click", () => getAdd("Event"));
+
+
+
+// router.get("/attend-event", withAuth, async (req, res, next) => {
+//   try {
+//     const { _id } = req.session.currentUser
+//     const data = await Event.find()
+//     const attendEvent = await User.findOne({ _id })
+//     const newAttendEvent = []
+
+//     for (attend of data) {
+//       let iWillAttend = false
+//       attendEvent.events.forEach(userAttend => {
+//         if (attend._id.equals(userAttend._id)) {
+//           iWillAttend = true
+//         }
+//       })
+//       if (!iWillAttend) {
+//         newAttendEvent.push(attend)
+//       }
+//     }
+//     res.render("/events/attend-event", { newAttendEvent })
+//   }
+//   catch (error) {
+//     console.log('Error finding event', error)
+//   }
+
+// })
+
+
+
+router.get("/attend-event/:_id", (req, res, next) => {
+  res.render("user/fav-events")
+})
+
+router.post("/attend-event/:_id", (req, res, next) => {
+  console.log("entered the route to favourite event")
+  const { name, description, date, location } = req.body
+
+  if (name && description && date && location) {
+    const attendEvent = new Event({
+      name,
+      description,
+      date,
+      location
+    })
+    attendEvent.save(function (err, attendEvent) {
+      if (err) return console.error(err);
+      console.log(attendEvent.name + " saved in the DB.");
+    });
+
+    User.findOneAndUpdate({ "_id": req.session.currentUser._id }, { $push: { attendEvents: attendEvent.id } }, { new: true })
+      .then(user => console.log("Event added to user profile!"))
+
+    res.redirect("/user/fav-events/")
+  } else {
+    res.render("user/fav-events", {
+      errorMessage: "oh! We could not do it, try again later!"
+    })
+  }
+
+})
+
+
 
 module.exports = router;
