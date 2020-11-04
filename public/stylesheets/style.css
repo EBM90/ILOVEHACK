@@ -935,9 +935,9 @@ footer {
   }
 /* RESPONSIVE */
 
-@media screen and (min-width:900px){
+/* @media screen and (min-width:900px){ */
 /* INDICE */
-.logo{
+/* .logo{
   width: 600px;
   height: 600px;
 }
@@ -947,19 +947,18 @@ footer {
   
 }
 .btnlog{
-  /* display: flex;
-  flex-direction: row; */
+  
   font-size: 70px;
   margin-right: 100px;
   margin-top: 212px;
 }
 .btnlog a{
   margin-left: 70px;
-}
+} */
 
 /* NAVBAR */
 
-nav {
+/* nav {
 
   margin-top: 0;
   height: 26%;
@@ -969,11 +968,8 @@ nav {
 
 }
 
-/* nav a{
-  padding-right: 100px;
-} */
 .nav-link{
  margin-left: 140px;
 }
 
-}
+} */
