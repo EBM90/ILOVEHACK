@@ -81,7 +81,7 @@ router.post("/signup",uploadCloud.single("photo"), async (req, res, next) => {
     await User.create({
       fullname,
       password: hashPass,
-      birthdate: date,
+      birthdate,
       gender,
       email,
       description,

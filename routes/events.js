@@ -40,11 +40,8 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
       });
       return;
     }
-    const d = date;
-    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-    const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
-    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-    const niceDate = `${da}-${mo}-${ye}`;
+    
+    var cuteDate = date.toLocaleDateString('es-ES');
 
     try {
       const event = await Event.findOne({ name: name, date: date });
@@ -201,65 +198,39 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 
 
 
-// router.get("/attend-event", withAuth, async (req, res, next) => {
-//   try {
-//     const { _id } = req.session.currentUser
-//     const data = await Event.find()
-//     const attendEvent = await User.findOne({ _id })
-//     const newAttendEvent = []
+router.get("/attend-event/:id", withAuth, async (req, res, next) => {
+  try {
+    const { _id } = req.user._id;;
+    console.log('este es el id', _id)
+    Event.findOne({ "_id": id })
+    // const { _id } = req.session.currentUser
+    
+    const attendEvent = await User.findOne({ _id })
+    const newAttendEvent = []
 
-//     for (attend of data) {
-//       let iWillAttend = false
-//       attendEvent.events.forEach(userAttend => {
-//         if (attend._id.equals(userAttend._id)) {
-//           iWillAttend = true
-//         }
-//       })
-//       if (!iWillAttend) {
-//         newAttendEvent.push(attend)
-//       }
-//     }
-//     res.render("/events/attend-event", { newAttendEvent })
-//   }
-//   catch (error) {
-//     console.log('Error finding event', error)
-//   }
-
-// })
-
-
-
-router.get("/attend-event/:_id", (req, res, next) => {
-  res.render("user/fav-events")
-})
-
-router.post("/attend-event/:_id", (req, res, next) => {
-  console.log("entered the route to favourite event")
-  const { name, description, date, location } = req.body
-
-  if (name && description && date && location) {
-    const attendEvent = new Event({
-      name,
-      description,
-      date,
-      location
-    })
-    attendEvent.save(function (err, attendEvent) {
-      if (err) return console.error(err);
-      console.log(attendEvent.name + " saved in the DB.");
-    });
-
-    User.findOneAndUpdate({ "_id": req.session.currentUser._id }, { $push: { attendEvents: attendEvent.id } }, { new: true })
-      .then(user => console.log("Event added to user profile!"))
-
-    res.redirect("/user/fav-events/")
-  } else {
-    res.render("user/fav-events", {
-      errorMessage: "oh! We could not do it, try again later!"
-    })
+    for (attend of data) {
+      let iWillAttend = false
+      attendEvent.events.forEach(userAttend => {
+        if (attend._id.equals(userAttend._id)) {
+          iWillAttend = true
+        }
+      })
+      if (!iWillAttend) {
+        newAttendEvent.push(attend)
+      }
+    }
+    res.render("events/fav-events", { newAttendEvent })
   }
-
+  catch (error) {
+    console.log('Error finding event', error)
+  }
 })
+
+
+
+
+
+
 
 
 
