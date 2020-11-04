@@ -7,7 +7,7 @@
 
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 34px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -29,8 +29,6 @@ a {
   font-size: 55px;
   font-family: "Orbitron", sans-serif;
 }
-
-
 
 #form label {
   color: #666;
@@ -212,24 +210,24 @@ margin-top: 10px;
   font-size: 47px;
   font-family: "VT323", monospace;
   border-radius: 0;
+  
 }
 
 .navbar-brand img {
   border-radius: 0;
-  height: 2rem;
-  width: 2.5rem;
+  height: 4.5rem;
+  width: 5rem;
 }
 
-#holi {
+#bluenav {
   background-color: #1E3AA4;
+  
 }
 
 nav {
-  margin-top: 0;
+  margin: 0;
   width: 100%;
-  margin-left: 0;
   position: fixed;
-
 }
 
 /* SIDEBAR */
@@ -286,6 +284,10 @@ nav {
   padding-top: 80px;
 }
 
+.index-text p{
+  text-align: justify;
+}
+
 .btnlog a button {
   padding: 0 2rem;
 }
@@ -298,6 +300,8 @@ nav {
 display: flex;
 flex-direction: column;
 align-items: center;
+font-size: 43px;
+margin: 0 4rem;
 }
 
 /* LOGIN */
@@ -311,15 +315,13 @@ align-items: center;
 }
 
 /* MY PROFILE */
+
 .greeting {
   font-size: 38px;
   padding-top: 10%;
   margin: 0 80px;
 }
-.fullname {
-  font-size: 38px;
-  margin-left: 50%;
-}
+
 
 .description {
   font-size: 38px;
@@ -754,6 +756,7 @@ font-size: 42px;
   background: #1E3AA4;
   padding: 14px 20px 10px 20px;
   text-decoration: none;
+  border: 0.5rem outset  black;
 }
 
 .futurist-button:hover {
@@ -761,3 +764,63 @@ font-size: 42px;
 }
 
 /* END OF 3D BUTTON */
+
+
+.shake{
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.shake:before,
+.shake:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.shake:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.shake:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
