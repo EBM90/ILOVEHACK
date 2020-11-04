@@ -97,7 +97,7 @@ router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
   console.log(id)
   Event.findOne({ "_id": id })
     .then(event => {
-      res.render("events/event-details", { event })
+      res.render("events/event-details", { event , layout: false})
     })
 });
 
