@@ -375,6 +375,7 @@ nav {
 .gender {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .gender div {

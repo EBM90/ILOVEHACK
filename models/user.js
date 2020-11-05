@@ -13,7 +13,6 @@ const userSchema = new Schema(
     imgPath: {type:String},
     answers: [],
     favEvent: [ { type: Schema.Types.ObjectId, ref: "Event"} ],
-    ownEvents:  [ { type: Schema.Types.ObjectId, ref: "Event"} ],
   },
   {
     timestamps: true,
