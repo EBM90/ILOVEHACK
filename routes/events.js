@@ -9,7 +9,11 @@ router.get("/events/add-event", withAuth, function (req, res, next) {
   res.render("events/add-event");
 });
 
-router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
+router.post(
+  "/events/add-event",
+  uploadCloud.single("photo"),
+  withAuth,
+  async (req, res, next) => {
     const { name, description, date, location } = req.body;
 
     var today = new Date();
@@ -40,11 +44,8 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
       });
       return;
     }
-    const d = date;
-    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-    const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
-    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-    const niceDate = `${da}-${mo}-${ye}`;
+
+    var cuteDate = date.toLocaleDateString("es-ES");
 
     try {
       const event = await Event.findOne({ name: name, date: date });
@@ -68,39 +69,38 @@ router.post("/events/add-event", uploadCloud.single("photo"), withAuth, async (r
     } catch (error) {
       next(error);
     }
-    User.findOneAndUpdate({ "_id": req.session.currentUserInfo._id }, { $push: { event: event.id } }, { new: true })
-    .then(user => console.log("The event was created!"));
+    User.findOneAndUpdate(
+      { _id: req.session.currentUserInfo._id },
+      { $push: { event: event.id } },
+      { new: true }
+    ).then((user) => console.log("The event was created!"));
   }
 );
 
 router.get("/events/all-events", withAuth, function (req, res, next) {
   Event.find()
-      .then( allTheEventsFromDB => {
-        console.log('Retrieved events from DB:', allTheEventsFromDB);
-        res.render('events/all-events', { events: allTheEventsFromDB });
-      })
-      .catch(error => {
-        next(error);
-      });
+    .then((allTheEventsFromDB) => {
+      console.log("Retrieved events from DB:", allTheEventsFromDB);
+      res.render("events/all-events", { events: allTheEventsFromDB });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 router.post("/events/all-events", withAuth, async function (req, res, next) {
   try {
     const event = await Event.find();
-  } catch (error) {
-    
-  }
+  } catch (error) {next(error);}
 });
 
-router.get('/events/event-details/:id', withAuth, async (req, res, next)=>{
+router.get("/events/event-details/:id", withAuth, async (req, res, next) => {
   const { id } = req.params;
-  console.log(id)
-  Event.findOne({ "_id": id })
-    .then(event => {
-      res.render("events/event-details", { event , layout: false})
-    })
+  console.log(id);
+  Event.findOne({ _id: id }).then((event) => {
+    res.render("events/event-details", { event, layout: false });
+  });
 });
-
 
 router.get("/events/edit", withAuth, function (req, res, next) {
   Event.findOne({ _id: req.query.event_id })
@@ -112,49 +112,53 @@ router.get("/events/edit", withAuth, function (req, res, next) {
     });
 });
 
-router.post("/events/edit", uploadCloud.single("photo"), withAuth, (req, res, next) => {
-  const { name, description, date, location } = req.body;
-  const imgPath = req.file.url;
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0");
-  var yyyy = today.getFullYear();
+router.post(
+  "/events/edit",
+  withAuth,
+  (req, res, next) => {
+    const { name, description, date, location } = req.body;
+    const imgPath = req.file.url;
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
+    var yyyy = today.getFullYear();
 
-  today = mm + dd + yyyy;
-  if (date < today) {
-    res.render("events/add-event", {
-      errorMessage: "The event has to happen in the future :)",
-    });
-    return;
-  } else if (name.length < 5) {
-    res.render("events/add-event", {
-      errorMessage: "Your event name should have at least 5 characters",
-    });
-    return;
-  } else if (description.length < 5) {
-    res.render("events/add-event", {
-      errorMessage: "Write a longer description!",
-    });
-    return;
-  } else if (location.length < 3) {
-    res.render("events/add-event", {
-      errorMessage:
-        "People will need to know where to go! Tell them the place ^^",
-    });
-    return;
+    today = mm + dd + yyyy;
+    if (date < today) {
+      res.render("events/add-event", {
+        errorMessage: "The event has to happen in the future :)",
+      });
+      return;
+    } else if (name.length < 5) {
+      res.render("events/add-event", {
+        errorMessage: "Your event name should have at least 5 characters",
+      });
+      return;
+    } else if (description.length < 5) {
+      res.render("events/add-event", {
+        errorMessage: "Write a longer description!",
+      });
+      return;
+    } else if (location.length < 3) {
+      res.render("events/add-event", {
+        errorMessage:
+          "People will need to know where to go! Tell them the place ^^",
+      });
+      return;
+    }
+
+    Event.update(
+      { _id: req.query.event_id },
+      { $set: { name, description, date, location, imgPath } }
+    )
+      .then((event) => {
+        res.redirect("/events/all-events");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-
-  Event.update(
-    { _id: req.query.event_id },
-    { $set: { name, description, date, location, imgPath } }
-  )
-    .then((event) => {
-      res.redirect("/events/all-events");
-    })
-    .catch((error) => {
-      console.log(error); 
-    });
-});
+);
 
 //edit event picture
 router.get("/events/editPhoto", withAuth, function (req, res, next) {
@@ -167,44 +171,44 @@ router.get("/events/editPhoto", withAuth, function (req, res, next) {
     });
 });
 
-router.post("/events/editPhoto", uploadCloud.single("photo"), withAuth, async (req, res, next) => {
-  const imgPath = req.file.url;
+router.post(
+  "/events/editPhoto",
+  [uploadCloud.single("photo"),
+  withAuth],
+  async (req, res, next) => {
+    const imgPath = req.file.url;
 
-  await Event.updateOne(
-    { _id: req.query.event_id },
-    { $set: { imgPath } }, { new: true },
-  )
-    .then((event) => {
-      res.redirect("/all-events");
-    })
-    .catch((error) => {
-      console.log(error); 
-    });
-});
+    await Event.updateOne(
+      { _id: req.query.event_id },
+      { $set: { imgPath } },
+      { new: true }
+    )
+      .then((event) => {
+        res.redirect("/all-events");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+);
 
 //delete event
 
 router.post("/events/delete", withAuth, async (req, res, next) => {
   await Event.deleteOne({ _id: req.query.event_id });
-    res.redirect("all-events");
+  res.redirect("all-events");
 });
 
 // FAV EVENTS
 
-// router.post("/user/fav-events", withAuth, async (req, res, next) => {
-//   await Event.add({ _id: req.query.event_id });
-//   const eventFav = document.querySelector("event-details")
-// });
-
-// const eventFav = document.querySelector("attend-btn");
-// eventFav.addEventListener("click", () => getAdd("Event"));
-
-
-
-// router.get("/attend-event", withAuth, async (req, res, next) => {
+// router.get("/attend-event/favEvent", withAuth, async (req, res, next) => {
 //   try {
-//     const { _id } = req.session.currentUser
-//     const data = await Event.find()
+//     console.log(req.query.event_id, 'este es el id del evento actual')
+//     const { _id } = req.query.event_id;
+//     console.log('este es el id', req.session.currentUserInfo._id)
+//     Event.findOne({ "_id": id })
+//     // const { _id } = req.session.currentUser
+
 //     const attendEvent = await User.findOne({ _id })
 //     const newAttendEvent = []
 
@@ -219,48 +223,64 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 //         newAttendEvent.push(attend)
 //       }
 //     }
-//     res.render("/events/attend-event", { newAttendEvent })
+//     res.render("events/fav-events", { newAttendEvent })
 //   }
 //   catch (error) {
 //     console.log('Error finding event', error)
 //   }
-
 // })
 
+// router.post('/attend-event/:event._id', async (req, res, next) => {
+//   const { _id } = req.params;
+//   console.log(_id, 'este es el id')
+//   const userId = req.session.currentUser._id;
+//   let updUser = await User.findOneAndUpdate({ "_id": userId }, { $push: { socialChallenges: id } }, { new: true })
+//   res.redirect("/events/fav-events")
+// })
 
-
-router.get("/attend-event/:_id", (req, res, next) => {
-  res.render("user/fav-events")
-})
-
-router.post("/attend-event/:_id", (req, res, next) => {
-  console.log("entered the route to favourite event")
-  const { name, description, date, location } = req.body
-
-  if (name && description && date && location) {
-    const attendEvent = new Event({
-      name,
-      description,
-      date,
-      location
-    })
-    attendEvent.save(function (err, attendEvent) {
-      if (err) return console.error(err);
-      console.log(attendEvent.name + " saved in the DB.");
-    });
-
-    User.findOneAndUpdate({ "_id": req.session.currentUser._id }, { $push: { attendEvents: attendEvent.id } }, { new: true })
-      .then(user => console.log("Event added to user profile!"))
-
-    res.redirect("/user/fav-events/")
-  } else {
-    res.render("user/fav-events", {
-      errorMessage: "oh! We could not do it, try again later!"
-    })
+router.get("/attend-event/fav", withAuth, async (req, res, next) => {
+  const userId = req.user._id;
+  console.log(userId);
+  try {
+    const user = await User.findById(userId);
+    console.log(userId, "this is the user id");
+    res.render("user/fav-events", { user });
+  } catch (error) {
+    next(error);
+    return;
   }
+});
 
-})
+router.post("/attend-event/fav", withAuth, async (req, res, next) => {
+  try {
+    console.log("entered the route");
+    const { name, description, date, location } = req.body;
 
+    if (name && description && date && location) {
+      const favEvent = new Event({
+        name,
+        description,
+        date,
+        location,
+      });
+      favEvent.save(function (err, favEvent) {
+        if (err) return console.error(err);
+        console.log(favEvent.name + " saved in the DB.");
+      });
 
+      User.findOneAndUpdate(
+        { _id: req.session.currentUser._id },
+        { $push: { favEvent: favEvent.id } },
+        { new: true }
+      ).then((user) => console.log("Saved in the db!"));
+
+      res.redirect("user/fav-events");
+    } else {
+      res.render("user/fav-events", {
+        errorMessage: "Please fill all the fields",
+      });
+    }
+  } catch (error) {}
+});
 
 module.exports = router;
