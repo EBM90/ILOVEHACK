@@ -437,7 +437,6 @@ nav {
   align-items: center;
   flex-direction: column;
   padding-bottom: 2rem;
-  border-bottom: 1px solid darkslategray;
 }
 
 .align-edite-image a {
@@ -575,18 +574,10 @@ justify-content: center;
 }
 
 /* ADD-EVENT */
-.align-add-event {
-  padding-top: 100px;
-}
-.tituloadd {
-  font-size: 26px;
-  margin-left: 32%;
-  padding-top: 40px;
-  padding-bottom: 30px;
-}
+
 .descadd {
   font-size: 18px;
-  padding-bottom: 30px;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   text-align: justify;
@@ -692,7 +683,6 @@ justify-content: center;
 }
 
 .align-event-details h2 {
-  padding-top: 2rem;
   font-size: 28px;
 }
 
@@ -704,14 +694,16 @@ justify-content: center;
   font-size: 36px;
 }
 
+#event-details-title {
+  margin-top: 0;
+}
+
 .details-button {
   font-size: 22px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-content: center;
-
+  padding-bottom: 2rem;
 }
+
 .edit-event-btn {
   margin-left: 1rem;
   width: 33%;
@@ -787,10 +779,6 @@ justify-content: center;
   min-height: 400px;
   margin-top: 10px;
   padding-bottom: 30px;
-}
-
-.edit-photo-profile{
-  margin-left: 60px
 }
 
 /* LIGHT BUTTON */
@@ -1004,7 +992,7 @@ justify-content: center;
   border-radius: 14px;
   font-family: "VT323", monospace;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   background: #1e3aa4;
   text-decoration: none;
   border: 0.5rem outset black;
@@ -1029,7 +1017,7 @@ footer {
 
 /* END OF FOOTER */
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   /* 3D button */
 
   .futurist-button {
@@ -1278,16 +1266,13 @@ width: 50%;
   margin-left: 70px;
 }
 
-.tituloedit { 
-  font-size: 38px;
-}
-
 
 /* EDIT PHOTO USER */
 
 .tituloedit { 
   font-size: 26px;
   padding-bottom: 2rem;
+  font-size: 38px;
 }
 
 .img-photo-profileedit{
@@ -1315,8 +1300,7 @@ width: 50%;
   margin-top: 40px;
  
 }
-/* 
-ALL EVENTS */
+/* ALL EVENTS */
 
 .eventtitle{
   font-size: 45px;
@@ -1336,6 +1320,10 @@ ALL EVENTS */
   font-size: 30px;
 }
 
+.eventalign {
+  align-items: center;
+  margin: 1rem 20%;
+}
 
 /* ADD NEW EVENT */
 .align-add-event{

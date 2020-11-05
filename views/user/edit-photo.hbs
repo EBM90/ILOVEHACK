@@ -1,9 +1,9 @@
 <section class="edit-photo-profile">
-<h1 class="tituloedit">Attach your new hero picture here!</h1>
-
+<h1 class="tituloedit eventalign">Attach your new hero picture here!</h1>
 <img class="img-photo-profileedit" src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
 <form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post" enctype="multipart/form-data">
     <input type="file" name="photo" required />
     </br>
-    <button class="btnedituser" type="submit">Edit </button>
+    <button class="btnedituser futurist-button" type="submit">Edit </button>
 </form>
+</section>

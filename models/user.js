@@ -12,8 +12,8 @@ const userSchema = new Schema(
     description:String,
     imgPath: {type:String},
     answers: [],
-    likedEvents: [ { type: Schema.Types.ObjectId, ref: "Events"} ],
-    ownEvents:  [ { type: Schema.Types.ObjectId, ref: "Events"} ],
+    favEvent: [ { type: Schema.Types.ObjectId, ref: "Event"} ],
+    ownEvents:  [ { type: Schema.Types.ObjectId, ref: "Event"} ],
   },
   {
     timestamps: true,

@@ -31,8 +31,11 @@
       </div>
     </div>
   </nav>
+  <div class="align-allevent" id="event-details-title">
+    <h2 class="eventtitle">Event details</h2>
+  </div>
   <div class="align-event-details">
-    <h2 class="event-title">Event details</h2>
+
     {{#if event}}
     <div class="eventalign" id="event-details">
       <img class="img-eventdetails" src="{{event.imgPath}}">
@@ -44,20 +47,17 @@
     {{else}}
     <p>There are no details yet! :(</p>
     {{/if}}
-    
-    <i class="details-button">
-      <form class="edit-event-btn" action="/attend-event/fav?event_id={{event._id}}&user_id={{currentUserInfo._id}}" method="post">
-        <button class="futurist-button" type="submit"> Attend event</button>
-      </form>
-      <a class="edit-event-btn" href="/events/editPhoto?event_id={{event._id}}"><button class="futurist-button">Edit Image</button></a>
-      <a class="edit-event-btn" href="/events/edit?event_id={{event._id}}"><button class="futurist-button">Edit event</button></a>
-    </i>
-    
-  </div>
 
-  <input type="checkbox" id="switch" name="switch">
-  <label for="switch" class="switch"></label>
-  <h1 class="btn-light-desc">Click on the button! And add this event to your favorites</h1>
+    <i class="details-button">
+      <form class="edit-event-btn" action="/attend-event/fav?event_id={{event._id}}&user_id={{currentUserInfo._id}}"
+        method="post">
+        <button class="futurist-button" type="submit"> Add to fav</button>
+      </form>
+      <a class="edit-event-btn" href="/events/editPhoto?event_id={{event._id}}"><button class="futurist-button">Edit
+          Image</button></a>
+      <a class="edit-event-btn" href="/events/edit?event_id={{event._id}}"><button class="futurist-button">Edit
+          event</button></a>
+    </i>
 
   </div>
 
