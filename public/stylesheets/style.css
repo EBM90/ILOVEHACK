@@ -405,33 +405,30 @@ nav {
   /* display: flex;
   justify-content: space-around; */
   box-sizing: border-box;
-  font-size: 50px;
   outline: 0;
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
-  padding-right: 100px;
-  margin-left: 120px;
-
-  /* padding-top: 80px; */
+  display: flex;
+  justify-content: center;
 }
 .btnprofile button {
-  padding: 0 2rem;
+  padding: 0.5rem 1rem;
   font-size: 16px;
-  display: flex;
-  flex-direction: row;
+  width: 80%;
 }
 .btnmatch {
-  margin-top: 60px;
+  display: flex;
 }
 
 .profileimg {
-  max-width: 260px;
+  max-width: 300px;
   max-height: 400px;
-  min-width: 260px;
+  min-width: 300px;
   min-height: 400px;
-  margin-top: 90px;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #ececf0;
 }
 
 .profile-align {
@@ -439,17 +436,10 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid darkslategray;
 }
 
-/* .edit-profile{
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-
-/* }
-.edit-btn-myprofile{
-  font-size: 35px;
-} */
 .align-edite-image a {
   font-size: 16px;
   padding: 40px;
@@ -505,6 +495,7 @@ nav {
 }
 
 /* ALL EVENTS */
+
 .eventalign {
   display: flex;
   justify-content: center;
@@ -534,12 +525,13 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 25px;
+  font-size: 36px;
 }
 
 .eventtitle {
   font-size: 20px;
-  margin: 120px 1rem 80px;
+  margin: 80px 1rem 30px;
   background-color: #000c66;
   color: white;
   padding: 1rem;
@@ -547,19 +539,17 @@ nav {
 
 .nombreevento {
   font-size: 18px;
-  padding-top: 1rem;
   text-align: left;
 }
 
-.imgevent {
-  margin-top: 100px;
-  border: 0.15rem solid white;
+.event-name-box {
+  padding-top: 1rem;
+}
 
-  /* max-width: 600px;
-max-height: 700px;
-min-width: 600px;
-min-height: 700px; */
-  width: 15rem;
+.imgevent {
+  margin-top: 1rem;
+  border: 0.15rem solid white;
+  width: 100%;
 }
 
 .all-events-button {
@@ -570,13 +560,18 @@ min-height: 700px; */
   color: #ffffff;
   font-size: 15px;
   background: #1e3aa4;
-  padding: 14px 20px 10px 20px;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   border: 0.5rem outset black;
 }
 
 .all-events-button:hover {
   text-decoration: none;
+}
+
+.event-details-button-allign {
+display: flex;
+justify-content: center;
 }
 
 /* ADD-EVENT */
@@ -632,14 +627,13 @@ min-height: 700px; */
 
 .btnadd2 {
   box-sizing: border-box;
-  font-size: 23px;
   outline: 0;
   padding: 4px;
   margin: 4px;
 }
 
 .click-me {
-  padding: 0 40px;
+  padding: 0.5rem 40px;
 }
 
 /* EDIT EVENT */
@@ -1218,9 +1212,7 @@ nav img{
 
 .description {
   font-size: 38px;
- 
 }
-
 
 .profile-align {
   display: flex;
@@ -1332,7 +1324,7 @@ ALL EVENTS */
   width: 30rem;
 }
 .nombreevento{
-  font-size: 32px;
+  margin-bottom: 0;
 }
 
 .all-events-button{

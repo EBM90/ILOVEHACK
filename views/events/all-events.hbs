@@ -1,15 +1,20 @@
 <i class="align-allevent">
 <h2 class="eventtitle">THE COOLEST EVENTS IN THE CITY &#127798</h2>
-<div class="btnevent">
-<a class="btnadd2" href="/events/add-event"><button class="click-me">Add a new event</button></a>
 </i>
+<div class="btnevent">
+<a class="btnadd2 " href="/events/add-event"><button class="click-me futurist-button">Add a new event</button></a>
+</div>
 {{#each events}}
 <div class="eventalign">
   <img class="imgevent" src="{{this.imgPath}}">
+  <div class="event-name-box">
   <p class="nombreevento">{{this.name}} 
   <p class="nombreevento">{{this.date}} </p>
   <p class="nombreevento">{{this.location}} </p>
+  </div>
+  <div class="event-details-button-allign">
   <a href="/events/event-details/{{this._id}}"><button class="all-events-button" >Event details</button></a>
+   </div>
    </div>
     {{else}}
     <p>There are no events yet! :(</p>

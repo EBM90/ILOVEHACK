@@ -1,14 +1,15 @@
-<p>There are no matches to show yet, sometimes love takes a bit longer, but do not give up!</p>
-
+<i class="align-allevent">
+<h2 class="eventtitle">IT'S A MATCH &#128171</h2>
+</i>
 
 {{#each matchList}}
 
 <div class="profile-align">
   <img class="profileimg" src="{{this.imgPath}}">
-  <p class="greeting"> Hello, I am {{ this.fullname }} </p>
+  <p class="greeting"> Hello, I am {{ this.fullname }}. </p>
   <p class="description">A bit more about me: {{ this.description}}. </p>
   <p class="description">Send me some love to: {{ this.email}}. </p>
 </div>
 {{else}}
-<p>tus ojos gitanos me molan, bebé</p>
+<p>There are no matches yet, but don't give up! Soon we will find someone for you</p>
 {{/each}}
