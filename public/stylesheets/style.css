@@ -708,10 +708,15 @@ justify-content: center;
   font-size: 22px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-content: center;
+
 }
 .edit-event-btn {
-  margin-left: 70px;
+  margin-left: 1rem;
+  width: 33%;
+  text-align: center;
+  height: 100%;
 }
 
 .btn-light-desc {
