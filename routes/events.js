@@ -173,9 +173,8 @@ router.get("/events/editPhoto", withAuth, function (req, res, next) {
 
 router.post(
   "/events/editPhoto",
-  [uploadCloud.single("photo"),
-  withAuth],
-  async (req, res, next) => {
+  [uploadCloud.single("photo"), withAuth],
+   async (req, res, next) => {
     const imgPath = req.file.url;
 
     await Event.updateOne(
@@ -184,7 +183,7 @@ router.post(
       { new: true }
     )
       .then((event) => {
-        res.redirect("/all-events");
+        res.redirect("all-events");
       })
       .catch((error) => {
         console.log(error);
@@ -242,7 +241,8 @@ router.get("/attend-event/fav", withAuth, async (req, res, next) => {
   const userId = req.user;
   console.log(userId);
   try {
-    const user = await User.findById(userId);
+    const user = await User.findById(userId).populate('favEvent')
+    console.log(user)
     console.log(userId, "this is the user id");
     res.render("user/fav-events", { user });
   } catch (error) {
@@ -254,33 +254,18 @@ router.get("/attend-event/fav", withAuth, async (req, res, next) => {
 router.post("/attend-event/fav", withAuth, async (req, res, next) => {
   try {
     console.log("entered the route");
-    const { name, description, date, location } = req.body;
+    const { user_id, event_id } = req.query;
 
-    if (name && description && date && location) {
-      const favEvent = new Event({
-        name,
-        description,
-        date,
-        location,
-      });
-      favEvent.save(function (err, favEvent) {
-        if (err) return console.error(err);
-        console.log(favEvent.name + " saved in the DB.");
-      });
-
-      User.findOneAndUpdate(
-        { _id: req.session.currentUser._id },
-        { $push: { favEvent: favEvent.id } },
+      await User.findByIdAndUpdate(
+        user_id,
+        { $addToSet: { favEvent: event_id } },
         { new: true }
-      ).then((user) => console.log("Saved in the db!"));
-
-      res.redirect("user/fav-events");
-    } else {
-      res.render("user/fav-events", {
-        errorMessage: "Please fill all the fields",
-      });
-    }
-  } catch (error) {}
+      )
+      console.log("Saved in the db!");
+      res.redirect("/attend-event/fav");
+  } catch (error) {console.log(error)}
 });
+
+router.get
 
 module.exports = router;
