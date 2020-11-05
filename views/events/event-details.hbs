@@ -42,9 +42,10 @@
     {{else}}
         <p>There are no details yet! :(</p>
     {{/if}}
-    
     <i class="details-button">
-    <a class="edit-event-btn" href="/attend-event/{{event._id}}"><button>Attend event</button></a>
+    <form action="/attend-event/fav?event_id={{event._id}}&user_id={{currentUserInfo._id}}" method="post">
+    <button class="edit-event-btn" type="submit"> Attend event</button>
+    </form>
     <a class="edit-event-btn" href="/events/editPhoto?event_id={{event._id}}"><button>Edit Image</button></a>
     <a class="edit-event-btn" href="/events/edit?event_id={{event._id}}"><button>Edit event</button></a>
    </i>

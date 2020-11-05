@@ -35,10 +35,9 @@ router.get("/matches", withAuth, function (req, res, next) {
 
 router.get("/myprofile", withAuth, async (req, res, next) => {
   const userId = req.user._id;
-  console.log(userId);
+  console.log('this is the user ID', userId);
   try {
     const user = await User.findById(userId);
-    console.log(user, "julian");
     res.render("myprofile", { user });
   } catch (error) {
     next(error);
@@ -67,7 +66,7 @@ router.post("/user/edit", withAuth, async (req, res, next) => {
     email,
     description,
   } = req.body;
-  console.log(req.body, "hola");
+
   try {
     if (password.length < 8) {
       res.render("user/edit", {
