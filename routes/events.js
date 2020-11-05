@@ -239,7 +239,7 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 // })
 
 router.get("/attend-event/fav", withAuth, async (req, res, next) => {
-  const userId = req.user._id;
+  const userId = req.user;
   console.log(userId);
   try {
     const user = await User.findById(userId);

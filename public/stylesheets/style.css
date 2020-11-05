@@ -7,7 +7,6 @@
 }
 
 body {
-  /* padding: 50px; */
   font: 34px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
 	padding: 0;
@@ -26,94 +25,9 @@ a {
 }
 
 
-#form {
-  margin: 0 auto;
-  width: 580px;
-}
 
-#form h2 {
-  padding-top: 20rem;
-  text-align: center;
-  font-size: 55px;
-  font-family: "Orbitron", sans-serif;
-}
-#form h3 {
-  padding-top: 10rem;
-  text-align: center;
-  font-size: 55px;
-  font-family: "Orbitron", sans-serif;
-}
-
-
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  font-size: 46px;
-  font-family: "VT323", monospace;
-  padding: 20px;
-}
-
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 40px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-
-/* #form button {
-  /* background: #43a3e6; */
-  /* border: 1px solid ;
-  border-radius: 4px; */
-  /* color: #fff; */
-  /* cursor: pointer;
-  display: inline-block;
-  font-size: 41px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease background;
-  width: 100%;
-  height: 100px; */
-/* } */ 
-
-.sign-up {
-  padding-bottom: 5rem;
-}
-
-/* #form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: 0.3s ease background;
-} */
-
-.error-message {
-  background: #f02b63;
-  box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%;
-}
-.account-message {
-  font-size: 34px;
-}
-
-.signboton {
-  margin-top: 100px;
-}
 
 /* TEST */
-#form {
-  font-size: 31px;
-  /* font-family: 'VT323', monospace; */
-}
 
 .test1 {
   font-family: "Orbitron", sans-serif;
@@ -232,21 +146,19 @@ margin-top: 10px;
 
 /* NAVBAR */
 .navbar {
-  font-size: 47px;
+  font-size: 27px;
   font-family: "VT323", monospace;
   border-radius: 0;
-  
 }
 
 .navbar-brand img {
   border-radius: 0;
-  height: 4.5rem;
-  width: 5rem;
+  height: 2rem;
+  width: 2.5rem;
 }
 
 #bluenav {
   background-color: #1E3AA4;
-  
 }
 
 nav {
@@ -258,7 +170,7 @@ nav {
 /* SIDEBAR */
 
 .sideNav {
-  width: 20px;
+  width: 1rem;
   position: fixed;
   top: 50%;
   right: 0;
@@ -274,69 +186,151 @@ nav {
 }
 
 .sideNav img {
-  width: 45px;
+  width: 1.4rem;
   border-radius: 0;
 }
 
-/* ANIMACION */
-.ironman {
-  margin-left: 40%;
-  margin-top: -190px;
-  animation-name: ironman;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  margin-left: -25px;
-  padding-left: 20px;
-}
-@keyframes ironman {
-  50% {
-    transform: translate(0, 90px);
-  }
-}
 
 /* INDEX */
+
+.index-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  }
 
 .btnlog {
   /* margin-left: 30%; */
   display: flex;
   justify-content: space-around;
   box-sizing: border-box;
-  font-size: 70px;
+  font-size: 16px;
   outline: 0;
   padding: 4px;
   width: 100%;
-  margin-bottom: 20px;
-  padding-top: 80px;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .index-text p{
   text-align: justify;
 }
 
-.btnlog a button {
-  padding: 0 2rem;
+#index-buttons {
+  font-size: 20px;
+  width: 100%;
+  padding: 0 3rem;
+  margin: 0 0.5rem;
 }
 
 .logo {
-  margin:10rem 5rem;
+  margin:5rem 0 3rem 0;
+  width: 90%;
+  height: 90%;
 }
 
-.index-align {
-display: flex;
-flex-direction: column;
-align-items: center;
-font-size: 43px;
-margin: 0 4rem;
+
+
+.index-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-side {
+  padding: 0 1rem;
 }
 
 /* LOGIN */
 
 .loginbtn {
-  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  width: 100%;
 }
 
 .loginstc {
   margin-top: 87px;
+}
+
+.floating-heart {
+  margin-left: 40%;
+  margin-top: -190px;
+  animation-name: floating-heart;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  margin-left: -25px;
+  padding-left: 20px;
+}
+@keyframes floating-heart {
+  50% {
+    transform: translate(0, 90px);
+  }
+}
+
+#form {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 16px;
+}
+
+#form h2 {
+  padding-top: 10rem;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Orbitron", sans-serif;
+}
+#form h3 {
+  padding-top: 10rem;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Orbitron", sans-serif;
+}
+
+
+#form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 26px;
+  font-family: "VT323", monospace;
+  padding: 0.5rem;
+}
+
+#form input,
+#form button {
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 20px;
+} 
+
+.sign-up {
+  padding-bottom: 5rem;
+}
+
+.error-message {
+  background: #f02b63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+.account-message {
+  font-size: 1rem;
+}
+
+.signboton {
+  margin-top: 1rem;
 }
 
 /* MY PROFILE */
@@ -848,9 +842,9 @@ min-height: 700px; */
   border-radius: 14px;
   font-family: "VT323", monospace;
   color: #ffffff;
-  font-size: 100px;
+  font-size: 16px;
   background: #1E3AA4;
-  padding: 14px 20px 10px 20px;
+  padding: 1rem 2rem 0.7rem 2rem;
   text-decoration: none;
   border: 0.5rem outset  black;
 }
@@ -866,17 +860,39 @@ min-height: 700px; */
 
 /* RESPONSIVE */
 
-@media screen and (min-width:1000px){
+@media screen and (min-width: 700px){
+  /* 3D button */
+
+.futurist-button {
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: "VT323", monospace;
+  color: #ffffff;
+  font-size: 50px;
+  background: #1E3AA4;
+  padding: 14px 20px 10px 20px;
+  text-decoration: none;
+  border: 0.5rem outset  black;
+}
+
+.futurist-button:hover {
+  text-decoration: none;
+  font-size: larger;
+}
+
+/* END OF 3D BUTTON */
+
 /* INDICE */
 .logo{
   width: 50%;
-  max-width: 60rem;
-  margin-top: 20rem;
+  max-width: 50rem;
+  margin-top: 10rem;
 }
 .index-align{
   display: flex;
   flex-direction: row;
-  font-size: 55px;
+  font-size: 35px;
 }
 .btnlog{
   font-size: 70px;
@@ -970,7 +986,7 @@ nav img{
   padding: 0;
   }
 
-  .btnprofile {; */
+  .btnprofile {
     box-sizing: border-box;
     font-size: 50px;
     outline: 0;
@@ -990,4 +1006,8 @@ justify-content: center;
 /* END OF MY PROFILE  */
 
 
+}
+
+@media screen and (max-width: 700px){} 
+@media screen and (max-width: 990px) and (min-width: 710px) {
 }
