@@ -8,11 +8,12 @@
     <input type="password" name="password">
 
     <button class="signboton futurist-button">Log-me-in!</button>
+    <p class="account-message"> Don't have an account? <a href="/signup">Sign up</a>
+    </p>
     </div>
     {{#if errorMessage }}
     <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
 
-    <p class="account-message"> Don't have an account? <a href="/signup">Sign up</a>
-    </p>
+    
 </form>

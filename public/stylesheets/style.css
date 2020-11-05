@@ -23,163 +23,6 @@ a {
   color: #00b7ff;
 }
 
-#form {
-  margin: 0 auto;
-  width: 580px;
-}
-
-#form h2 {
-  padding-top: 20rem;
-  text-align: center;
-  font-size: 55px;
-  font-family: "Orbitron", sans-serif;
-}
-#form h3 {
-  padding-top: 10rem;
-  text-align: center;
-  font-size: 55px;
-  font-family: "Orbitron", sans-serif;
-}
-
-
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  font-size: 46px;
-  font-family: "VT323", monospace;
-  padding: 20px;
-}
-
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 40px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-
-#form button {
-  /* background: #43a3e6; */
-  border: 1px solid ;
-  border-radius: 4px;
-  /* color: #fff; */
-  cursor: pointer;
-  display: inline-block;
-  font-size: 41px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease background;
-  width: 100%;
-  height: 100px;
-  
-}
-
-.sign-up {
-  padding-bottom: 5rem;
-}
-
-#form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: 0.3s ease background;
-}
-
-.error-message {
-  background: #f02b63;
-  box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%;
-}
-.account-message {
-  font-size: 34px;
-}
-
-
-
-/* TEST */
-
-.test1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.question {
-  margin-top: 60px;
-  width: 100%;
-}
-
-.question-container{
-  width: 100%;
-  border-bottom: 1px solid darkslategray;
-}
-.answers {
-  font-family: "VT323", monospace;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.the-answers {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
-
-.separate-boxes-list{
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
-.registrobtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 90px;
-  margin-bottom: 10%;
-  width: 62%;
-  font-family: "VT323", monospace;
-  font-size: 50px;
-}
-
-.gender {
-  display: flex;
-  flex-direction: row;
-}
-
-.gender div{
-  display: flex;
-  flex-direction: row;
-}
-
-
-/* li {
-  display: inline-block;
-  position: relative;
-} */
-
-/* .radio{
-  float: right; 
-display: block;
-text-align:right;
-width: 200px;
-margin-top: 10px;
-} */
 
 /* ESto es el estilo del FAQ */
 .FAQ {
@@ -308,8 +151,6 @@ nav {
   height: 90%;
 }
 
-
-
 .index-text {
   display: flex;
   flex-direction: column;
@@ -342,6 +183,7 @@ nav {
   margin-left: -25px;
   padding-left: 20px;
 }
+
 @keyframes floating-heart {
   50% {
     transform: translate(0, 90px);
@@ -367,14 +209,13 @@ nav {
   font-family: "Orbitron", sans-serif;
 }
 
-
 #form label {
   color: #666;
   display: inline-block;
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
-  font-size: 26px;
+  font-size: 16px;
   font-family: "VT323", monospace;
   padding: 0.5rem;
 }
@@ -382,7 +223,7 @@ nav {
 #form input,
 #form button {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 18px;
   outline: 0;
   padding: 4px;
   width: 100%;
@@ -402,13 +243,83 @@ nav {
   padding: 20px;
   width: 100%;
 }
+
 .account-message {
   font-size: 1rem;
 }
 
 .signboton {
   margin-top: 1rem;
+  padding-bottom: 1rem;
 }
+
+/* SIGN UP */
+
+.test-container {
+  
+}
+
+
+.test1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.question-container{
+  width: 100%;
+  border-bottom: 1px solid darkslategray;
+}
+.answers {
+  font-family: "VT323", monospace;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.the-answers {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.separate-boxes-list{
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.registrobtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+  margin-bottom: 10%;
+  width: 62%;
+  font-family: "VT323", monospace;
+  font-size: 50px;
+}
+
+.gender {
+  display: flex;
+  flex-direction: row;
+}
+
+.gender div{
+  display: flex;
+  flex-direction: row;
+}
+
 
 /* MY PROFILE */
 
@@ -929,11 +840,6 @@ font-size: 28px;
 
 /* 3D button */
 
-@import "compass/css3";
-@import url("https://fonts.googleapis.com/css?family=Inconsolata");
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-
 .futurist-button {
   -webkit-border-radius: 14;
   -moz-border-radius: 14;
@@ -942,13 +848,13 @@ font-size: 28px;
   color: #ffffff;
   font-size: 16px;
   background: #1E3AA4;
-  padding: 1rem 2rem 0.7rem 2rem;
   text-decoration: none;
   border: 0.5rem outset  black;
 }
 
 .futurist-button:hover {
   text-decoration: none;
+  font-size: larger;
 }
 
 /* FOOTER */
