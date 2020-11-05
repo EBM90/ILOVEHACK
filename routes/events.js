@@ -200,43 +200,6 @@ router.post("/events/delete", withAuth, async (req, res, next) => {
 
 // FAV EVENTS
 
-// router.get("/attend-event/favEvent", withAuth, async (req, res, next) => {
-//   try {
-//     console.log(req.query.event_id, 'este es el id del evento actual')
-//     const { _id } = req.query.event_id;
-//     console.log('este es el id', req.session.currentUserInfo._id)
-//     Event.findOne({ "_id": id })
-//     // const { _id } = req.session.currentUser
-
-//     const attendEvent = await User.findOne({ _id })
-//     const newAttendEvent = []
-
-//     for (attend of data) {
-//       let iWillAttend = false
-//       attendEvent.events.forEach(userAttend => {
-//         if (attend._id.equals(userAttend._id)) {
-//           iWillAttend = true
-//         }
-//       })
-//       if (!iWillAttend) {
-//         newAttendEvent.push(attend)
-//       }
-//     }
-//     res.render("events/fav-events", { newAttendEvent })
-//   }
-//   catch (error) {
-//     console.log('Error finding event', error)
-//   }
-// })
-
-// router.post('/attend-event/:event._id', async (req, res, next) => {
-//   const { _id } = req.params;
-//   console.log(_id, 'este es el id')
-//   const userId = req.session.currentUser._id;
-//   let updUser = await User.findOneAndUpdate({ "_id": userId }, { $push: { socialChallenges: id } }, { new: true })
-//   res.redirect("/events/fav-events")
-// })
-
 router.get("/attend-event/fav", withAuth, async (req, res, next) => {
   const userId = req.user;
   console.log(userId);

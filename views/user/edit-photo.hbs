@@ -1,13 +1,14 @@
+<div class="align-allevent">
+    <h2 class="eventtitle">Attach your new hero picture here!</h2>
+</div>
 <section class="edit-photo-align">
-    <div class="align-allevent">
-<h2 class="eventtitle">Attach your new hero picture here!</h2>
-</div>
-<img class="img-photo-profileedit" src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
-<div>
-<form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post" enctype="multipart/form-data">
-    <input type="file" name="photo" required />
-    </br>
-    <button class="futurist-button" type="submit">Edit </button>
-</form>
-</div>
+    <img class="img-photo-profileedit" src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
+    <div>
+        <form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post"
+            enctype="multipart/form-data">
+            <input class="input-form-align" type="file" name="photo" required />
+            </br>
+            <button class="futurist-button btneditevent2" id="btn-edit-profilepic" type="submit">Edit </button>
+        </form>
+    </div>
 </section>

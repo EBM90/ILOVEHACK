@@ -21,15 +21,17 @@
   <br />
   <div class="gender">
     <div>
-    <label for="radio" required>Gender:</label>
+    <label for="gender" required>Gender:</label>
     </div>
     <div>
-      <label for="male">Male</label><br>
       <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      
     </div>
     <div>
-      <label for="female">Female</label><br>
       <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br>
+      
     </div>
   </div>
   {{!-- <label for="photo">Attach a nice picture ;)</label> --}}
@@ -43,9 +45,9 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question1" value="1" /> Highball glass</li>
-            <li class="separate-boxes-list"><input type="radio" name="question1" value="2" /> Glass of cider</li>
-            <li class="separate-boxes-list"><input type="radio" name="question1" value="3" />With a straw</li>
+            <li class="separate-boxes-list"><p>Highball glass</p><input type="radio" name="question1" value="1" /> </li>
+            <li class="separate-boxes-list"><p>Glass of cider</p><input type="radio" name="question1" value="2" /> </li>
+            <li class="separate-boxes-list"><p>With a straw</p><input type="radio" name="question1" value="3" /></li>
             {{!-- <li><input type="radio" name="preg1" value="4" /> I'm more of beer ...<br /></li> --}}
           </ul>
         </div>
@@ -55,10 +57,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question2" value="1" /> Cola-cao</li>
+            <li class="separate-boxes-list"><p>Cola-cao</p><input type="radio" name="question2" value="1" /> </li>
             {{!-- <input type="radio" name="preg2" value="2" /> Nesquick<br /> --}}
-            <li class="separate-boxes-list"><input type="radio" name="question2" value="2" /> Cofee</li>
-            <li class="separate-boxes-list"><input type="radio" name="question2" value="3" /> Others(juice, milk...)
+            <li class="separate-boxes-list"><p>Cofee</p><input type="radio" name="question2" value="2" /> </li>
+            <li class="separate-boxes-list"><p>Others(juice, milk...)</p><input type="radio" name="question2" value="3" /> 
             </li>
           </ul>
         </div>
@@ -68,10 +70,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question3" value="1" /> Getting sexy<br /></li>
-            <li class="separate-boxes-list"> <input type="radio" name="question3" value="2" /> By the stomach<br /></li>
+            <li class="separate-boxes-list"><p>Getting sexy</p><input type="radio" name="question3" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>By the stomach </p><input type="radio" name="question3" value="2" /> <br /></li>
             {{!-- <input type="radio" name="preg3" value="3" /> With laughter<br /> --}}
-            <li class="separate-boxes-list"><input type="radio" name="question3" value="3" /> Seduce 404 error<br />
+            <li class="separate-boxes-list"><p>Seduce 404 error</p><input type="radio" name="question3" value="3" /> <br />
             </li>
           </ul>
         </div>
@@ -81,10 +83,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question4" value="1" /> Guitar<br /></li>
+            <li class="separate-boxes-list"><p>Guitar</p><input type="radio" name="question4" value="1" /> <br /></li>
             {{!-- <input type="radio" name="preg4" value="2" /> Triangle<br /> --}}
-            <li class="separate-boxes-list"><input type="radio" name="question4" value="2" /> Clap hands<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question4" value="3" /> Zambomba<br /></li>
+            <li class="separate-boxes-list"><p>Clap hands</p><input type="radio" name="question4" value="2" /> <br /></li>
+            <li class="separate-boxes-list"><p>Zambomba</p><input type="radio" name="question4" value="3" /> <br /></li>
           </ul>
         </div>
       </div>
@@ -93,9 +95,9 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"> <input type="radio" name="question5" value="1" /> Yes<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question5" value="2" /> NO!<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question5" value="3" /> I want twins<br /></li>
+            <li class="separate-boxes-list"><p>Yes</p><input type="radio" name="question5" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>NO!</p><input type="radio" name="question5" value="2" /> <br /></li>
+            <li class="separate-boxes-list"><p>I want twins</p><input type="radio" name="question5" value="3" /> <br /></li>
             {{!-- <input type="radio" name="preg5" value="4" /> I have enough with taking care of myself...<br /> --}}
           </ul>
         </div>
@@ -105,9 +107,9 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question6" value="1" /> Yes<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question6" value="2" /> No, never<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question6" value="3" /> Only when i'm drunk<br />
+            <li class="separate-boxes-list"><p>Yes</p><input type="radio" name="question6" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>No, never</p><input type="radio" name="question6" value="2" /> <br /></li>
+            <li class="separate-boxes-list"><p>Only when i'm drunk</p><input type="radio" name="question6" value="3" /> <br />
             </li>
             {{!-- <input type="radio" name="preg6" value="4" /> I have never had a relationship<br /> --}}
         </div>
@@ -118,9 +120,9 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question7" value="1" /> Degree<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question7" value="2" /> Doctor<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question7" value="3" /> Middle school<br /></li>
+            <li class="separate-boxes-list"><p>Degree</p><input type="radio" name="question7" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>Doctor</p><input type="radio" name="question7" value="2" /> <br /></li>
+            <li class="separate-boxes-list"><p>Middle school</p><input type="radio" name="question7" value="3" /> <br /></li>
             {{!-- <input type="radio" name="questions" value="4" /> No studies, but I'm the boss of the drug<br /> --}}
         </div>
         </ul>
@@ -130,10 +132,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"> <input type="radio" name="question8" value="1" /> Japanese<br /></li>
+            <li class="separate-boxes-list"><p>Japanese</p><input type="radio" name="question8" value="1" /> <br /></li>
             {{!-- <input type="radio" name="questions" value="2" /> Spanish<br /> --}}
-            <li class="separate-boxes-list"><input type="radio" name="question8" value="2" /> Italian<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question8" value="3" /> Your lips, baby<br /></li>
+            <li class="separate-boxes-list"><p>Italian</p><input type="radio" name="question8" value="2" /> <br /></li>
+            <li class="separate-boxes-list"><p>Your lips, baby</p><input type="radio" name="question8" value="3" /> <br /></li>
         </div>
         </ul>
       </div>
@@ -142,10 +144,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question9" value="1" /> Sleeping<br /></li>
-            <li class="separate-boxes-list"><input type="radio" name="question9" value="2" /> 50 shades<br /></li>
+            <li class="separate-boxes-list"><p>Sleeping</p><input type="radio" name="question9" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>50 shades</p><input type="radio" name="question9" value="2" /> <br /></li>
             {{!-- <input type="radio" name="questions" value="3" /> Let them dominate me<br /> --}}
-            <li class="separate-boxes-list"><input type="radio" name="question9" value="3" /> Fifty/fifty<br /></li>
+            <li class="separate-boxes-list"><p>Fifty/fifty</p><input type="radio" name="question9" value="3" /> <br /></li>
         </div>
         </ul>
       </div>
@@ -154,10 +156,10 @@
         </div>
         <div class="answers">
           <ul class="the-answers">
-            <li class="separate-boxes-list"><input type="radio" name="question10" value="1" /> I would run<br /></li>
-            <li class="separate-boxes-list"> <input type="radio" name="question10" value="2" /> I would fight<br /></li>
+            <li class="separate-boxes-list"><p>I would run</p><input type="radio" name="question10" value="1" /> <br /></li>
+            <li class="separate-boxes-list"><p>I would fight</p><input type="radio" name="question10" value="2" /> <br /></li>
             {{!-- <input type="radio" name="questions" value="3" /> Ask who smokes<br /> --}}
-            <li class="separate-boxes-list"> <input type="radio" name="question10" value="3" /> Alt F4<br /></li>
+            <li class="separate-boxes-list"><p>Alt F4</p><input type="radio" name="question10" value="3" /> <br /></li>
         </div>
         </ul>
       </div>
