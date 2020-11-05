@@ -120,16 +120,18 @@ nav {
 }
 
 .btnlog {
-  /* margin-left: 30%; */
   display: flex;
   justify-content: space-around;
   box-sizing: border-box;
   font-size: 16px;
   outline: 0;
-  padding: 4px;
   width: 100%;
   margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+.btnlog div{
+  padding: 0 0.2rem;
 }
 
 .index-text p {
@@ -137,10 +139,9 @@ nav {
 }
 
 #index-buttons {
-  font-size: 20px;
+  font-size: 24px;
   width: 100%;
-  padding: 0 3rem;
-  margin: 0 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .logo {
@@ -164,7 +165,7 @@ nav {
 .loginbtn {
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   width: 100%;
 }
 
@@ -174,7 +175,7 @@ nav {
 
 .floating-heart {
   margin-left: 40%;
-  margin-top: -190px;
+  margin-top: -110px;
   animation-name: floating-heart;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -184,18 +185,24 @@ nav {
 
 @keyframes floating-heart {
   50% {
-    transform: translate(0, 90px);
+    transform: translate(0, 50px);
   }
 }
 
 #form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
   margin: 0 auto;
   width: 100%;
   font-size: 16px;
 }
 
 #form h2 {
-  padding-top: 10rem;
+  padding-top: 8rem;
   text-align: center;
   font-size: 25px;
   font-family: "Orbitron", sans-serif;
@@ -218,15 +225,24 @@ nav {
   padding: 0.5rem;
 }
 
-#form input,
-#form button {
+#form input{
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 16px;
   outline: 0;
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
   padding-top: 20px;
+}
+
+#form button {
+  box-sizing: border-box;
+  font-size: 25px;
+  outline: 0;
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .error-message {
@@ -257,7 +273,7 @@ nav {
 }
 
 #form-signup h2 {
-  padding-top: 7rem;
+  padding-top: 5rem;
   text-align: center;
   font-size: 25px;
   font-family: "Orbitron", sans-serif;
@@ -280,8 +296,7 @@ nav {
   padding: 0.5rem;
 }
 
-#form-signup input,
-#form-signup button {
+#form-signup input{
   box-sizing: border-box;
   font-size: 18px;
   outline: 0;
@@ -291,12 +306,18 @@ nav {
   padding-top: 20px;
 }
 
+#form-signup button {
+  box-sizing: border-box;
+  font-size: 25px;
+  outline: 0;
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  text-align: center;
+}
 
 .sign-up {
   padding-bottom: 1rem;
-}
-
-.test-container {
 }
 
 .test1 {
@@ -319,8 +340,6 @@ nav {
 }
 .answers {
   font-family: "VT323", monospace;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 .the-answers {
@@ -336,6 +355,10 @@ nav {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 33%;
+  height: 100%;
+  text-align: center;
 }
 
 .registrobtn {
@@ -357,6 +380,10 @@ nav {
 .gender div {
   display: flex;
   flex-direction: row;
+}
+
+#signup-submit {
+  margin-top: 1rem;
 }
 
 /* MY PROFILE */
@@ -1088,9 +1115,14 @@ footer {
     margin-top: 30px;
     width: 100%;
   }
-  .signup-submit {
-    margin: 2rem 0 50rem 0;
+  #signup-submit {
+    width: 80%;
+    padding: 0 30rem;
   }
+
+  #signup-but {
+    width: 80%;
+  } 
 
   /* END OF SIGN UP */
 
