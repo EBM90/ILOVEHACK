@@ -946,7 +946,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 1000px){
   /* 3D button */
 
 .futurist-button {
@@ -974,7 +974,7 @@ footer {
 .logo{
   width: 50%;
   max-width: 50rem;
-  margin-top: 10rem;
+  margin-top: -1rem;
 }
 .index-align{
   display: flex;
@@ -993,7 +993,9 @@ footer {
   flex-direction: column;
   padding: 15rem 7rem 5rem 7rem;
   width: 50%;
+  margin-top: -8rem;
 }
+
 /* NAVBAR */
  nav {
   margin-top: 0;
@@ -1010,6 +1012,7 @@ nav img{
   height: 100;
 }
 /* SIGN SIGN UP */
+
 .gender {
   display: flex;
 }
@@ -1036,7 +1039,33 @@ nav img{
   margin: 2rem 0 50rem 0;
 }
 /* END OF SIGN UP */
+
+
 /* MY PROFILE  */
+.profileimg{
+  max-width: 460px;
+  max-height: 600px;
+  min-width: 460px;
+  min-height: 400px;
+  margin-top: 90px;
+  padding-bottom: 30px;
+  margin-right: 70px;
+  
+}
+.align-edite-image a{
+  font-size: 30px;
+  margin-right: 50px;
+}
+.greeting {
+  font-size: 38px;
+}
+
+.description {
+  font-size: 38px;
+ 
+}
+
+
 .profile-align {
   display: flex;
   flex-direction: column;
@@ -1048,6 +1077,7 @@ nav img{
 }
 .btnprofile  button{
   padding: 0;
+  font-size: 45px;
   }
 
   .btnprofile {
@@ -1066,10 +1096,203 @@ display: flex;
 justify-content: center;
   }
 /* END OF MY PROFILE  */
+
+/* EDIT USER */
+.edit-user{
+  font-size: 30px;
+  padding-top: -180px;
+}
+
+.edit-user >input{
+width: 50%;
+}
+
+.img-edit-btn{
+  padding-top: 65px;
+}
+
+.edit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 70px;
+  font-size: 32px;
+}
+
+.delete-profile-btn{
+  font-size: 32px;
+  margin-left: 70px;
+}
+
+.tituloedit { 
+  font-size: 38px;
+}
+
+
+/* EDIT PHOTO USER */
+
+.tituloedit { 
+  font-size: 26px;
+  padding-bottom: 2rem;
+}
+
+.img-photo-profileedit{
+  max-width: 350px;
+  max-height: 500px;
+  min-width: 350px;
+  min-height: 500px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+
+}
+
+.edit-photo-profile{
+  margin-left: 480px
+}
+
+.editform{
+  font-size: 20px;
+}
+
+.btnedituser{
+  font-size: 32px;
+  padding: 1px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+ 
+}
+/* 
+ALL EVENTS */
+
+.eventtitle{
+  font-size: 45px;
+}
+.btnadd2{
+  font-size: 32px;
+}
+
+.imgevent {
+  width: 30rem;
+}
+.nombreevento{
+  font-size: 32px;
+}
+
+.all-events-button{
+  font-size: 30px;
+}
+
+
+/* ADD NEW EVENT */
+.align-add-event{
+  padding-top: 100px;
+}
+.tituloadd {
+  font-size: 52px;
+  
+}
+.descadd {
+  font-size: 32px;
+}
+
+.formadd {
+ 
+  font-size: 32px;
+}
+.formadd > input{
+  width: 50%;
+}
+
+.addbtn {
+  margin-left: 360px;
+  font-size: 33px;
+  width: 50%;
+  
+}
+
+/* EVENT DETAIL */
+
+/* EVENT DETAIL */
+
+  .align-event-details h2 {
+padding-top: 2rem;
+font-size: 38px;
+  }
+
+ .img-eventdetails{
+   width: 32rem;
+ }
+ 
+ .details-button{
+   font-size: 22px;
+ }
+.edit-event-btn{
+  margin-left: 50px;
+}
+
+.btn-light-desc{
+  font-size:32px ;
+}
+
+#event-details p {
+  font-size: 18px;
+}
+
+.details-button {
+  font-size: 28px;
+}
+
+/* EDIT IMAGE EVENT */
+
+.photoedit-event-width{
+  width: 30rem;
+}
+.tituloedit-event{
+  font-size: 38px;
+}
+.btneditevent2{
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+
+
+/* EDIT EVENT INFO */
+
+.btneditevent1{
+  font-size: 30px;
+}
+
+.editform1 {
+  font-size: 40px;
+}
+.editform1 input{
+  font-size: 28px;
+}
+.editform1 label{
+  font-size: 32px;
+}
+
+.btn-delete{
+  font-size: 30px; 
+}
+
+/* ESto es el estilo del FAQ */
+.textoFAQ {
+  font-size: 39px;
+}
+.service-box {
+  font-size: 28px;
+}
+
+
+
 }
 @media screen and (max-width: 700px){} 
 @media screen and (max-width: 990px) and (min-width: 710px) {
 }
+
 
 
 
