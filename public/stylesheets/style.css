@@ -1024,7 +1024,7 @@ footer {
 
 /* END OF FOOTER */
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   /* 3D button */
 
   .futurist-button {
@@ -1086,14 +1086,6 @@ footer {
     height: 100;
   }
 
-  /* SIGN SIGN UP */
-  .gender {
-    display: flex;
-  }
-  .gender div {
-    display: flex;
-    flex-direction: row;
-  }
   .the-answers {
     display: flex;
     flex-direction: column;
@@ -1117,6 +1109,34 @@ footer {
   #signup-but {
     width: 80%;
   } 
+#form input{
+  width: 50%;
+  margin-left: 25%;
+  font-size: 28px;
+}
+#form label{
+  font-size: 32px;
+}
+.account-message{
+  font-size: 22px;
+}
+#form h2{
+  font-size: 40px;
+}
+#form button{
+  width: 50%;
+}
+
+#form-signup label{
+  font-size: 32px;
+}
+
+#form-signup input{
+  width: 50%;
+  margin-left: 25%;
+  font-size: 28px;
+}
+
 
   /* END OF SIGN UP */
 
@@ -1163,12 +1183,11 @@ nav img{
 }
 /* SIGN SIGN UP */
 
-.gender {
-  display: flex;
-}
 .gender div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  font-size: 30px;
+  margin-right: 400px;
 }
 .the-answers {
   display: flex;
@@ -1188,7 +1207,14 @@ nav img{
 .signup-submit {
   margin: 2rem 0 50rem 0;
 }
+
+.test1{
+  font-size: 27px;
+}
 /* END OF SIGN UP */
+
+/* 
+MATCHES */
 
 
 /* MY PROFILE  */
@@ -1280,11 +1306,12 @@ width: 50%;
 
 /* EDIT PHOTO USER */
 
-.tituloedit { 
-  font-size: 26px;
-  padding-bottom: 2rem;
+.tituloedit{ 
+  font-size: 39px;
 }
-
+.eventtitle{
+  margin-right: 6rem;
+}
 .img-photo-profileedit{
   max-width: 350px;
   max-height: 500px;
@@ -1308,7 +1335,6 @@ width: 50%;
   padding: 1px;
   margin-bottom: 20px;
   margin-top: 40px;
- 
 }
 /* 
 ALL EVENTS */
@@ -1319,9 +1345,11 @@ ALL EVENTS */
 .btnadd2{
   font-size: 32px;
 }
-
+.nombreevento{
+  font-size: 26px;
+}
 .imgevent {
-  width: 30rem;
+  width: 41rem;
 }
 .nombreevento{
   margin-bottom: 0;
@@ -1330,7 +1358,10 @@ ALL EVENTS */
 .all-events-button{
   font-size: 30px;
 }
-
+.eventalign {
+  align-content: center;
+  margin: 1rem 26%
+}
 
 /* ADD NEW EVENT */
 .align-add-event{
@@ -1338,6 +1369,7 @@ ALL EVENTS */
 }
 .tituloadd {
   font-size: 52px;
+  margin-left: 35rem;
   
 }
 .descadd {
