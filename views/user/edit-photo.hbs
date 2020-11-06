@@ -5,11 +5,11 @@
 <section class="edit-photo-align">
     <img class="img-photo-profileedit" src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
     <div class="">
-        <form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post"
+        <form class="editform" id="editform-user-photo" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post"
             enctype="multipart/form-data">
-            <input class="input-form-align" type="file" name="photo" required />
+            <input class="input-form-align" id="editform-user-photo" type="file" name="photo" required />
             </br>
-            <button class="futurist-button btneditevent2" type="submit">Edit </button>
+            <button class="futurist-button btneditevent2" id="editform-user-photo" type="submit">Edit </button>
         </form>
     </div>
 </section>
