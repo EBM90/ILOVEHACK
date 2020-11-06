@@ -711,6 +711,9 @@ justify-content: center;
   font-size: 22px;
   display: flex;
   padding-bottom: 2rem;
+  font-size: 22px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .edit-event-btn {
@@ -732,12 +735,6 @@ justify-content: center;
   font-size: 18px;
 }
 
-.details-button {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
 .eventtitle-details {
   font-size: 20px;
@@ -1383,6 +1380,11 @@ width: 50%;
 .eventtitle{
   margin-right: 6rem;
 }
+
+.eventtitle-details {
+  font-size: 30px;
+}
+
 .img-photo-profileedit{
   max-width: 350px;
   max-height: 500px;
@@ -1486,12 +1488,11 @@ width: 50%;
 
 .descadd {
   font-size: 32px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin:0 25%;
 }
 
 .formadd {
- 
+  padding-top: 15px;
   font-size: 32px;
 }
 .formadd > input{
@@ -1499,10 +1500,17 @@ width: 50%;
 }
 
 .addbtn {
-  margin-left: 360px;
+  margin: 0;
   font-size: 33px;
-  width: 50%;
-  
+  width: 30%;
+}
+.button-add-event {
+  display: flex;
+  justify-content: center;
+}
+
+.form-add-event {
+margin-bottom: 3rem;
 }
 
 /* EVENT DETAIL */
@@ -1515,26 +1523,34 @@ font-size: 38px;
   }
 
  .img-eventdetails{
-   width: 32rem;
+   padding-top: 2rem;
+   width: 90%;
  }
  
  .details-button{
    font-size: 22px;
+  
  }
 .edit-event-btn{
-  margin-left: 50px;
+  margin: 0.5rem 1rem;
 }
 
 .btn-light-desc{
   font-size:32px ;
 }
 
+#event-details {
+  background-color: ;
+}
+
 #event-details p {
   font-size: 18px;
+  padding: 0 2rem;
 }
 
 .details-button {
-  font-size: 28px;
+  font-size: 25px;
+
 }
 
 /* EDIT IMAGE EVENT */
