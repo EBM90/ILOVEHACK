@@ -1400,6 +1400,24 @@ width: 50%;
   margin: 1rem 26%
 }
 
+.align-allpage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.eventtitle {
+  font-size: 30px;
+  margin: 80px 1rem 30px;
+  background-color: #000c66;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
 /* ADD NEW EVENT */
 .align-add-event{
   padding-top: 100px;
