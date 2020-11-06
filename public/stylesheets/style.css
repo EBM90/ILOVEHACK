@@ -439,6 +439,7 @@ nav {
   align-items: center;
   flex-direction: column;
   padding-bottom: 2rem;
+  max-height: fit-content;
 }
 
 .align-edite-image a {
@@ -1152,6 +1153,16 @@ footer {
   font-size: 28px;
 }
 
+#form-signup h2 {
+  font-size: 35px;
+}
+
+#form-signup button {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  text-align: center;
+}
 
   /* END OF SIGN UP */
 
@@ -1159,13 +1170,12 @@ footer {
  .logo {
   width: 50%;
   max-width: 50rem;
-  margin-top: 20rem;
+  margin-top: 4rem;
 }
 .index-align {
   display: flex;
   flex-direction: row;
   font-size: 35px;
-  padding-top: 5rem;
 }
 .btnlog {
   font-size: 70px;
@@ -1250,9 +1260,18 @@ width: 100%;
   margin: 2rem 0 50rem 0;
 }
 
+#create-account-button {
+  padding: 4rem;
+}
+
 .test1{
   font-size: 27px;
 }
+
+#sign-up-title {
+  font-size: 9rem;
+}
+
 /* END OF SIGN UP */
 
 /* 
@@ -1286,6 +1305,7 @@ MATCHES */
   display: flex;
   flex-direction: column;
 }
+
 .all-profile-align {
   display: flex;
   flex-direction: column;
