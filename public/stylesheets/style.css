@@ -1175,7 +1175,10 @@ nav img{
   height: 100;
 }
 /* SIGN SIGN UP */
-
+.signboton{
+ margin-top: 4rem;
+ 
+}
 .gender div {
   display: flex;
   flex-direction: column;
@@ -1199,6 +1202,11 @@ nav img{
 }
 .signup-submit {
   margin: 2rem 0 50rem 0;
+
+}
+#signup-submit {
+  width: 120%;
+  margin-left: 130px;
 }
 
 .test1{
@@ -1349,6 +1357,13 @@ width: 50%;
 .eventalign {
   align-content: center;
   margin: 1rem 26%
+}
+
+/* MATCHES */
+
+.description{
+  margin-left: 270px;
+  margin-right: 270px;
 }
 
 /* ADD NEW EVENT */
