@@ -345,6 +345,8 @@ nav {
 }
 .the-answers {
   list-style: none;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -767,7 +769,7 @@ justify-content: center;
 }
 
 .photoedit-event-width {
-  padding-top: 3rem;
+  margin-top: 3rem;
   width: 75%;
 }
 .tituloedit-event {
@@ -787,8 +789,13 @@ justify-content: center;
   flex-direction: column;
   justify-content: center;
   width:90%;
-  padding: 0;
+  padding-top: 1rem;
 }
+
+.editform button {
+margin-top: 2rem;
+}
+
 .btneditevent2 {
   display: flex;
   justify-content: center;
@@ -1231,6 +1238,7 @@ nav img{
 .the-answers {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   margin: 0;
   padding-top: 0.5rem;
@@ -1241,6 +1249,7 @@ nav img{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
   text-align: left;
   padding: 0.5rem;
   flex-wrap: nowrap;
@@ -1401,6 +1410,11 @@ width: 50%;
 
 .editform{
   font-size: 20px;
+  padding: 2rem 30%;
+}
+
+.editform button{
+  margin-top: 4rem;
 }
 
 .btnedituser{
@@ -1558,6 +1572,7 @@ font-size: 38px;
 .photoedit-event-width{
   width: 30rem;
 }
+
 .tituloedit-event{
   font-size: 38px;
 }
@@ -1586,6 +1601,10 @@ font-size: 38px;
 
 .btn-delete{
   font-size: 30px; 
+}
+
+#edit-event-align {
+margin: 0 20%;
 }
 
 /* ESto es el estilo del FAQ */
