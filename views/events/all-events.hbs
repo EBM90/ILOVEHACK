@@ -4,6 +4,7 @@
 <div class="btnevent">
 <a class="btnadd2 " href="/events/add-event"><button class="click-me futurist-button">Add a new event</button></a>
 </div>
+<div class="events-desktop-row">
 {{#each events}}
 <div class="eventalign">
   <img class="imgevent" src="{{this.imgPath}}">
@@ -15,9 +16,10 @@
   <div class="event-details-button-allign">
   <a href="/events/event-details/{{this._id}}"><button class="all-events-button" >Event details</button></a>
    </div>
-   </div>
+</div>
     {{else}}
     <p>There are no events yet! :(</p>
-
 {{/each}}
+</div>
+
 

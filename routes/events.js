@@ -117,7 +117,6 @@ router.post(
   withAuth,
   (req, res, next) => {
     const { name, description, date, location } = req.body;
-    const imgPath = req.file.url;
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
     var mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -149,7 +148,7 @@ router.post(
 
     Event.update(
       { _id: req.query.event_id },
-      { $set: { name, description, date, location, imgPath } }
+      { $set: { name, description, date, location } }
     )
       .then((event) => {
         res.redirect("/events/all-events");

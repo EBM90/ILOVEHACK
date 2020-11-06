@@ -534,7 +534,7 @@ width: 40%;
   justify-content: center;
   align-items: center;
   padding-top: 25px;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .eventtitle {
@@ -1073,7 +1073,7 @@ footer {
     border-radius: 14px;
     font-family: "VT323", monospace;
     color: #ffffff;
-    font-size: 50px;
+    font-size: 35px;
     background: #1e3aa4;
     padding: 14px 20px 10px 20px;
     text-decoration: none;
@@ -1386,7 +1386,7 @@ width: 50%;
   font-size: 26px;
 }
 .imgevent {
-  width: 41rem;
+  width: 50%;
 }
 .nombreevento{
   margin-bottom: 0;
@@ -1397,7 +1397,19 @@ width: 50%;
 }
 .eventalign {
   align-content: center;
-  margin: 1rem 26%
+  margin: 1rem ;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.events-desktop-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  justify-content: space-between;
 }
 
 .align-allpage {
