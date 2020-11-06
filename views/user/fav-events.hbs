@@ -1,17 +1,19 @@
-<p>FAVevents OK</p>
 <section class="event-fav-add">
 <i class="align-allevent">
-<h2 class="eventtitle">MY fav events</h2>
+<h2 class="eventtitle">MY FAV EVENTS &#129346</h2>
 <div class="btnevent">
 </i>
+
 {{#each user.favEvent}}
 <div class="eventalign">
   <img class="imgevent" src="{{this.imgPath}}">
   <p class="nombreevento">{{this.name}}</p>
   <p class="nombreevento">{{this.date}} </p>
   <p class="nombreevento">{{this.location}} </p>
+   </div>
     {{else}}
     <p>There are no events yet! :(</p>
-</div>
+ 
 {{/each}}
+
 </section>

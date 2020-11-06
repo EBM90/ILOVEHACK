@@ -1,7 +1,8 @@
+<i class="align-allevent">
+<h2 class="eventtitle">EDIT YOUR EVENT &#128394</h2>
+</i>
+
 <section class="align-event-edit">
-<h1 class="tituloedit">Edit event</h1>
-
-
 <form class="editform1" action="/events/edit?event_id={{event._id}}" method="post">
 
   <label for="name">Event name</label>
@@ -16,12 +17,10 @@
   <label for="description">Description</label>
   <input type="text" name="description" value="{{event.description}}" />
 </br><br>
-  <label for="photo">Edit picture</label>
-  <input type="file" name="photo" value="{{event.imgPath}}" />
-</br>
+
 {{!-- <div class="btn-edit-event"> --}}
-  <button class="btneditevent1" type="submit">EDIT</button>
+  <button class="btneditevent1 futurist-button" type="submit">EDIT</button>
 </form>
-<form action="/events/delete?event_id={{event._id}}" method="post"><button class="btn-delete" type="submit">Delete event</button></form>
+<form action="/events/delete?event_id={{event._id}}" method="post"><button class="btn-delete futurist-button" type="submit">Delete event</button></form>
 {{!-- </div> --}}
 </section>

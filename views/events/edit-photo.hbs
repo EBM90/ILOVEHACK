@@ -1,11 +1,14 @@
 <div class="align-photoedit-event">
-<h1 class="tituloedit-event">Attach your new event photo here!</h1>
+    <div class="align-allevent">
+        <h1 class="eventtitle">ATTACH YOUR NEW PICTURE HERE! &#128394</h1>
+    </div>
 
-<img class="photoedit-event-width" src="{{event.imgPath}}" alt="{{event.name}}">
+    <img class="photoedit-event-width" src="{{event.imgPath}}" alt="{{event.name}}">
 
-<form class="editform" action="/events/editPhoto?event_id={{event._id}}" method="post" enctype="multipart/form-data">
-    <input type="file" name="photo" required/>
-    </br>
-    <button class="btneditevent2" type="submit">EDIT IMAGE </button>
-</form>
+    <form class="editform" action="/events/editPhoto?event_id={{event._id}}" method="post"
+        enctype="multipart/form-data">
+        <input type="file" name="photo" required />
+        </br>
+        <button class="btneditevent2 futurist-button" type="submit">Edit image </button>
+    </form>
 </div>
