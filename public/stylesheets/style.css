@@ -754,6 +754,10 @@ justify-content: center;
   flex-direction: column;
 }
 
+#btn-edit-profilepic{
+  width: 35%;
+}
+
 /* .align-photoedit-event input {
   margin-left: 300px;
   margin-top: 20px;
@@ -785,7 +789,6 @@ justify-content: center;
   flex-direction: column;
   justify-content: center;
   width:100%;
-  padding: 0 3rem;
 }
 .btneditevent2 {
   display: flex;
