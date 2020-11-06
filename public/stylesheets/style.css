@@ -755,6 +755,10 @@ justify-content: center;
   flex-direction: column;
 }
 
+#btn-edit-profilepic{
+  width: 35%;
+}
+
 /* .align-photoedit-event input {
   margin-left: 300px;
   margin-top: 20px;
@@ -1207,6 +1211,10 @@ nav img{
   height: 100;
 }
 /* SIGN SIGN UP */
+.signboton{
+ margin-top: 4rem;
+ 
+}
 
 .gender {
   display: flex;
@@ -1258,6 +1266,11 @@ width: 100%;
 }
 .signup-submit {
   margin: 2rem 0 50rem 0;
+
+}
+#signup-submit {
+  width: 120%;
+  margin-left: 130px;
 }
 
 #create-account-button {
@@ -1452,6 +1465,13 @@ width: 50%;
   color: white;
   padding: 1rem;
   text-align: center;
+}
+
+/* MATCHES */
+
+#align-matches{
+  margin-left: 270px;
+  margin-right: 270px;
 }
 
 /* ADD NEW EVENT */
