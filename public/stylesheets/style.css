@@ -131,7 +131,7 @@ nav {
   padding-top: 1rem;
 }
 
-.btnlog div{
+.btnlog div {
   padding: 0 0.2rem;
 }
 
@@ -226,7 +226,7 @@ nav {
   padding: 0.5rem;
 }
 
-#form input{
+#form input {
   box-sizing: border-box;
   font-size: 16px;
   outline: 0;
@@ -297,7 +297,7 @@ nav {
   padding: 0.5rem;
 }
 
-#form-signup input{
+#form-signup input {
   box-sizing: border-box;
   font-size: 18px;
   outline: 0;
@@ -475,7 +475,7 @@ nav {
 }
 
 .edit-btn button {
-width: 40%;
+  width: 40%;
 }
 
 .edit-profile-info {
@@ -581,8 +581,14 @@ width: 40%;
 }
 
 .event-details-button-allign {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+#event-details {
+  margin: 2rem;
+  width: 90%;
 }
 
 /* ADD-EVENT */
@@ -641,7 +647,6 @@ justify-content: center;
 
 /* EDIT EVENT */
 
-
 .btneditevent1 {
   box-sizing: border-box;
   font-size: 20px;
@@ -665,7 +670,7 @@ justify-content: center;
   width: 60%;
   font-size: 18px;
 }
-.editform1 label{
+.editform1 label {
   font-size: 20px;
 }
 
@@ -680,7 +685,7 @@ justify-content: center;
 .btn-delete {
   width: 50%;
   font-size: 20px;
-  margin-left: 25%;
+  /* margin-left: 25%; */
   margin-bottom: 40px;
 }
 
@@ -698,11 +703,12 @@ justify-content: center;
 }
 
 .img-eventdetails {
-  width: 20rem;
+  width: 90%;
 }
 
 #event-details p {
   font-size: 36px;
+  width: 100%;
 }
 
 #event-details-title {
@@ -737,7 +743,6 @@ justify-content: center;
   font-size: 18px;
 }
 
-
 .eventtitle-details {
   font-size: 20px;
   margin: 40px 1rem 30px;
@@ -754,7 +759,7 @@ justify-content: center;
   flex-direction: column;
 }
 
-#btn-edit-profilepic{
+#btn-edit-profilepic {
   width: 35%;
 }
 
@@ -788,12 +793,12 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width:90%;
+  width: 90%;
   padding-top: 1rem;
 }
 
 .editform button {
-margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .btneditevent2 {
@@ -807,7 +812,7 @@ margin-top: 2rem;
   /* width: 40%; */
 }
 
-.img-photo-profileedit{
+.img-photo-profileedit {
   max-width: 80%;
   max-height: 80%;
   min-width: 250px;
@@ -1068,14 +1073,12 @@ footer {
 
 /* END OF FOOTER */
 
-
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
-
 
 @media screen and (min-width: 1000px) {
   /* 3D button */
@@ -1099,7 +1102,111 @@ footer {
   }
   /* END OF 3D BUTTON */
 
- 
+  /* NAVBAR */
+  nav {
+    margin-top: 0;
+    height: 26%;
+    width: 100%;
+    margin-left: 0;
+    position: fixed;
+  }
+  .nav-link {
+    margin-left: 140px;
+    padding: 0;
+  }
+
+  nav img {
+    width: 100;
+    height: 100;
+  }
+  /* SIGN UP */
+
+  .the-answers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .question {
+    margin-top: 30px;
+    width: 100%;
+  }
+  #signup-submit {
+    width: 80%;
+    padding: 0 30rem;
+  }
+
+  #signup-but {
+    width: 80%;
+  }
+  #form input {
+    width: 50%;
+    margin-left: 25%;
+    font-size: 28px;
+  }
+  #form label {
+    font-size: 32px;
+  }
+  .account-message {
+    font-size: 22px;
+  }
+  #form h2 {
+    font-size: 40px;
+  }
+  #form button {
+    width: 50%;
+  }
+
+  #form-signup label {
+    font-size: 32px;
+  }
+
+  #form-signup input {
+    width: 50%;
+    margin-left: 25%;
+    font-size: 28px;
+  }
+
+  #form-signup h2 {
+    font-size: 35px;
+  }
+
+  #form-signup button {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  /* END OF SIGN UP */
+
+  /* INDICE */
+  .logo {
+    width: 50%;
+    max-width: 50rem;
+    margin-top: 4rem;
+  }
+  .index-align {
+    display: flex;
+    flex-direction: row;
+    font-size: 35px;
+  }
+  .btnlog {
+    font-size: 70px;
+    padding-right: 80px;
+  }
+  .btnlog a {
+    margin-left: 30px;
+  }
+  .index-side {
+    display: flex;
+    flex-direction: column;
+    padding: 15rem 7rem 5rem 7rem;
+    width: 50%;
+  }
+
   /* NAVBAR */
   nav {
     margin-top: 0;
@@ -1115,228 +1222,121 @@ footer {
     width: 100;
     height: 100;
   }
-/* SIGN UP */
+  /* SIGN SIGN UP */
+  .signboton {
+    margin-top: 4rem;
+  }
+
+  .gender {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .gender div {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+  }
+
+  .gender div label {
+    margin-right: 2rem;
+  }
 
   .the-answers {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 0.5rem;
   }
-  
+
+  .separate-boxes-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    text-align: left;
+    padding: 0.5rem;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  .separate-boxes-list input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .separate-boxes-list p {
+    width: 100%;
+  }
+
   .question {
     margin-top: 30px;
     width: 100%;
   }
+  .signup-submit {
+    margin: 2rem 0 50rem 0;
+  }
   #signup-submit {
-    width: 80%;
-    padding: 0 30rem;
+    width: 120%;
+    margin-left: 130px;
   }
 
-  #signup-but {
-    width: 80%;
-  } 
-#form input{
-  width: 50%;
-  margin-left: 25%;
-  font-size: 28px;
-}
-#form label{
-  font-size: 32px;
-}
-.account-message{
-  font-size: 22px;
-}
-#form h2{
-  font-size: 40px;
-}
-#form button{
-  width: 50%;
-}
+  #create-account-button {
+    padding: 4rem;
+  }
 
-#form-signup label{
-  font-size: 32px;
-}
+  .test1 {
+    font-size: 27px;
+  }
 
-#form-signup input{
-  width: 50%;
-  margin-left: 25%;
-  font-size: 28px;
-}
-
-#form-signup h2 {
-  font-size: 35px;
-}
-
-#form-signup button {
-  width: 30%;
-  margin-bottom: 20px;
-  padding: 0.5rem;
-  text-align: center;
-}
+  #sign-up-title {
+    font-size: 9rem;
+  }
 
   /* END OF SIGN UP */
 
- /* INDICE */
- .logo {
-  width: 50%;
-  max-width: 50rem;
-  margin-top: 4rem;
-}
-.index-align {
-  display: flex;
-  flex-direction: row;
-  font-size: 35px;
-}
-.btnlog {
-  font-size: 70px;
-  padding-right: 80px;
-}
-.btnlog a {
-  margin-left: 30px;
-}
-.index-side {
-  display: flex;
-  flex-direction: column;
-  padding: 15rem 7rem 5rem 7rem;
-  width: 50%;
-}
-
-/* NAVBAR */
- nav {
-  margin-top: 0;
-  height: 26%;
-  width: 100%;
-  margin-left: 0;
-  position: fixed;
-}
-.nav-link{
- margin-left: 140px;
-}
-nav img{
-  width: 100;
-  height: 100;
-}
-/* SIGN SIGN UP */
-.signboton{
- margin-top: 4rem;
- 
-}
-
-.gender {
-  display: flex;
-  flex-direction: row;
-}
-
-.gender div {
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-}
-
-.gender div label {
-  margin-right: 2rem;
-}
-
-.the-answers {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  padding-top: 0.5rem;
-}
-
-.separate-boxes-list{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-
-  text-align: left;
-  padding: 0.5rem;
-  flex-wrap: nowrap;
-  height: 100%;
-}
-
-.separate-boxes-list input{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.separate-boxes-list p {
-width: 100%;
-}
-
-.question {
-  margin-top: 30px;
-  width: 100%;
-}
-.signup-submit {
-  margin: 2rem 0 50rem 0;
-
-}
-#signup-submit {
-  width: 120%;
-  margin-left: 130px;
-}
-
-#create-account-button {
-  padding: 4rem;
-}
-
-.test1{
-  font-size: 27px;
-}
-
-#sign-up-title {
-  font-size: 9rem;
-}
-
-/* END OF SIGN UP */
-
-/* 
+  /* 
 MATCHES */
 
+  /* MY PROFILE  */
+  .profileimg {
+    max-width: 460px;
+    max-height: 600px;
+    min-width: 460px;
+    min-height: 400px;
+    margin-top: 90px;
+    padding-bottom: 30px;
+    margin-right: 70px;
+  }
+  .align-edite-image a {
+    font-size: 30px;
+    margin-right: 50px;
+  }
+  .greeting {
+    font-size: 38px;
+  }
 
-/* MY PROFILE  */
-.profileimg{
-  max-width: 460px;
-  max-height: 600px;
-  min-width: 460px;
-  min-height: 400px;
-  margin-top: 90px;
-  padding-bottom: 30px;
-  margin-right: 70px;
-  
-}
-.align-edite-image a{
-  font-size: 30px;
-  margin-right: 50px;
-}
-.greeting {
-  font-size: 38px;
-}
+  .description {
+    font-size: 38px;
+  }
 
-.description {
-  font-size: 38px;
-}
+  .profile-align {
+    display: flex;
+    flex-direction: column;
+  }
 
-.profile-align {
-  display: flex;
-  flex-direction: column;
-}
-
-.all-profile-align {
-  display: flex;
-  flex-direction: column;
-  padding: 0 20%;
-}
-.btnprofile  button{
-  padding: 0;
-  font-size: 45px;
+  .all-profile-align {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+  }
+  .btnprofile button {
+    padding: 0;
+    font-size: 45px;
   }
 
   .btnprofile {
@@ -1354,292 +1354,304 @@ MATCHES */
     display: flex;
     justify-content: center;
   }
-/* END OF MY PROFILE  */
+  /* END OF MY PROFILE  */
 
-/* EDIT USER */
-.edit-user{
-  font-size: 30px;
-  padding-top: -180px;
-}
-
-.edit-user >input{
-width: 50%;
-}
-
-.img-edit-btn{
-  padding-top: 65px;
-}
-
-.edit-btn{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 70px;
-  font-size: 32px;
-}
-
-.delete-profile-btn{
-  font-size: 32px;
-  margin-left: 70px;
-}
-
-
-/* EDIT PHOTO USER */
-
-.tituloedit{ 
-  font-size: 39px;
-}
-.eventtitle{
-  margin-right: 6rem;
-}
-
-.eventtitle-details {
-  font-size: 30px;
-}
-
-.img-photo-profileedit{
-  max-width: 350px;
-  max-height: 100%;
-  min-width: 350px;
-  min-height: 500px;
-  margin-top: 10px;
-  padding-bottom: 30px;
-
-}
-
-.edit-photo-profile{
-  margin-left: 480px
-}
-
-.editform{
-  font-size: 20px;
-  padding: 2rem 30%;
-}
-
-#editform-user-photo {
-  padding: 0;
-}
-
-.editform button{
-  margin-top: 4rem;
-}
-
-.btnedituser{
-  font-size: 32px;
-  padding: 1px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-/* ALL EVENTS */
-
-.eventtitle{
-  font-size: 45px;
-}
-.btnadd2{
-  font-size: 32px;
-}
-.nombreevento{
-  font-size: 26px;
-}
-.imgevent {
-  width: 50%;
-}
-.nombreevento{
-  margin-bottom: 0;
-}
-
-.all-events-button{
-  font-size: 30px;
-}
-.eventalign {
-  align-content: center;
-  margin: 1rem ;
-  display: flex;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-}
-
-.event-name-box {
-  padding: 2rem;
-}
-
-.events-desktop-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;  
-  justify-content: center;
-}
-
-.align-allpage {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.eventtitle {
-  font-size: 30px;
-  margin: 80px 1rem 30px;
-  background-color: #000c66;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-/* MATCHES */
-
-#align-matches{
-  margin-left: 270px;
-  margin-right: 270px;
-}
-
-/* ADD NEW EVENT */
-.align-add-event{
-  padding-top: 100px;
-}
-.tituloadd {
-  font-size: 52px;
-  margin-left: 35rem;
-  
-}
-
-.descadd {
-  font-size: 32px;
-  margin:0 25%;
-}
-
-.formadd {
-  padding-top: 15px;
-  font-size: 32px;
-}
-.formadd > input{
-  width: 50%;
-}
-
-.addbtn {
-  margin: 0;
-  font-size: 33px;
-  width: 30%;
-}
-.button-add-event {
-  display: flex;
-  justify-content: center;
-}
-
-.form-add-event {
-margin-bottom: 3rem;
-}
-
-/* EVENT DETAIL */
-
-/* EVENT DETAIL */
-
-  .align-event-details h2 {
-padding-top: 2rem;
-font-size: 38px;
+  /* EDIT USER */
+  .edit-user {
+    font-size: 30px;
+    padding-top: -180px;
   }
 
- .img-eventdetails{
-   padding-top: 2rem;
-   width: 90%;
- }
- 
- .details-button{
-   font-size: 22px;
-  
- }
-.edit-event-btn{
-  margin: 0.5rem 1rem;
-}
+  .edit-user > input {
+    width: 50%;
+  }
 
-.btn-light-desc{
-  font-size:32px ;
-}
+  .img-edit-btn {
+    padding-top: 65px;
+  }
 
-#event-details {
-  background-color: ;
-}
+  .edit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 70px;
+    font-size: 32px;
+  }
 
-#event-details p {
-  font-size: 18px;
-  padding: 0 2rem;
-}
+  .delete-profile-btn {
+    font-size: 32px;
+    margin-left: 70px;
+  }
 
-.details-button {
-  font-size: 25px;
+  /* EDIT PHOTO USER */
 
-}
+  .tituloedit {
+    font-size: 39px;
+  }
+  .eventtitle {
+    margin-right: 6rem;
+  }
 
-/* EDIT IMAGE EVENT */
+  .eventtitle-details {
+    font-size: 30px;
+  }
 
-.photoedit-event-width{
-  width: 30rem;
-}
+  .img-photo-profileedit {
+    max-width: 350px;
+    max-height: 100%;
+    min-width: 350px;
+    min-height: 500px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+  }
 
-.tituloedit-event{
-  font-size: 38px;
-}
-.btneditevent2{
-  font-size: 28px;
-  margin-bottom: 30px;
-}
+  .edit-photo-profile {
+    margin-left: 480px;
+  }
 
+  .editform {
+    font-size: 20px;
+    padding: 2rem 30%;
+  }
 
+  #editform-user-photo {
+    padding: 0;
+  }
 
-/* EDIT EVENT INFO */
+  .editform button {
+    margin-top: 4rem;
+  }
 
-.btneditevent1{
-  font-size: 30px;
-}
+  .btnedituser {
+    font-size: 32px;
+    padding: 1px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  /* ALL EVENTS */
 
-.editform1 {
-  font-size: 40px;
-}
-.editform1 input{
-  font-size: 28px;
-}
-.editform1 label{
-  font-size: 32px;
-}
+  .eventtitle {
+    font-size: 45px;
+  }
+  .btnadd2 {
+    font-size: 32px;
+  }
+  .nombreevento {
+    font-size: 26px;
+  }
+  .imgevent {
+    width: 50%;
+  }
+  .nombreevento {
+    margin-bottom: 0;
+  }
 
-.btn-delete{
-  font-size: 30px; 
-}
+  .all-events-button {
+    font-size: 30px;
+  }
+  .eventalign {
+    align-content: center;
+    margin: 1rem;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
 
-#edit-event-align {
-margin: 0 20%;
-}
+  .event-name-box {
+    padding: 2rem;
+  }
 
-/* ESto es el estilo del FAQ */
-.textoFAQ {
-  font-size: 39px;
-}
-.service-box {
-  font-size: 28px;
-  width: 45%;
-  margin: 2.5rem 1rem 1rem;
-}
+  .events-desktop-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-#structure {
-  width: 100%;
-}
+  .align-allpage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 
-#structure > div {
-  display: flex;
-  justify-content: between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* margin-top: -130px; */
-}
+  .eventtitle {
+    font-size: 30px;
+    margin: 80px 1rem 30px;
+    background-color: #000c66;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
 
+  /* MATCHES */
+
+  #align-matches {
+    margin-left: 270px;
+    margin-right: 270px;
+  }
+
+  /* ADD NEW EVENT */
+  .align-add-event {
+    padding-top: 100px;
+  }
+  .tituloadd {
+    font-size: 52px;
+    margin-left: 35rem;
+  }
+
+  .descadd {
+    font-size: 32px;
+    margin: 0 25%;
+  }
+
+  .formadd {
+    padding-top: 15px;
+    font-size: 32px;
+  }
+  .formadd > input {
+    width: 50%;
+  }
+
+  .addbtn {
+    margin: 0;
+    font-size: 33px;
+    width: 30%;
+  }
+  .button-add-event {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-add-event {
+    margin-bottom: 3rem;
+  }
+
+  /* EVENT DETAIL */
+
+  /* EVENT DETAIL */
+
+  .align-event-details h2 {
+    padding-top: 2rem;
+    font-size: 38px;
+  }
+
+  .img-eventdetails {
+    padding-top: 2rem;
+    width: 90%;
+  }
+
+  .details-button {
+    font-size: 22px;
+  }
+  .edit-event-btn {
+    margin: 0.5rem 1rem;
+  }
+
+  .btn-light-desc {
+    font-size: 32px;
+  }
+
+  #event-details {
+    width: 50%;
+  }
+
+  #event-details p {
+    font-size: 18px;
+    padding: 0 2rem;
+  }
+
+  .img-eventdetails {
+    width: 50%;
+  }
+
+  .details-button {
+    font-size: 25px;
+  }
+
+  /* EDIT IMAGE EVENT */
+
+  .photoedit-event-width {
+    width: 30rem;
+  }
+
+  .tituloedit-event {
+    font-size: 38px;
+  }
+  .btneditevent2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  /* EDIT EVENT INFO */
+
+  .btneditevent1 {
+    font-size: 30px;
+  }
+
+  .editform1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 20%;
+    font-size: 40px;
+  }
+  .editform1 input {
+    font-size: 28px;
+  }
+  .editform1 label {
+    font-size: 32px;
+  }
+
+  .edit-user-align {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  #delete-user-account {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn-delete {
+    font-size: 30px;
+  }
+
+  #edit-event-align {
+    margin: 0 20%;
+  }
+
+  /* ESto es el estilo del FAQ */
+  .textoFAQ {
+    font-size: 39px;
+  }
+  .service-box {
+    font-size: 28px;
+    width: 45%;
+    margin: 2.5rem 1rem 1rem;
+  }
+
+  #structure {
+    width: 100%;
+  }
+
+  #structure > div {
+    display: flex;
+    justify-content: between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* margin-top: -130px; */
+  }
 }
 @media screen and (max-width: 990px) and (min-width: 710px) {
 }
 
-@media screen and (max-width: 700px){} 
-
+@media screen and (max-width: 700px) {
+}
