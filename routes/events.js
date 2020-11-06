@@ -45,7 +45,7 @@ router.post(
       return;
     }
 
-    var cuteDate = date.toLocaleDateString("es-ES");
+    // var cuteDate = date.toLocaleDateString("es-ES");
 
     try {
       const event = await Event.findOne({ name: name, date: date });
