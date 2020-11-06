@@ -1,32 +1,32 @@
+<i class="align-allevent">
+  <h2 class="eventtitle">EDIT YOUR PROFILE INFO &#128394</h2>
+</i>
+  <form class="editform1" action="/user/edit?user_id={{user._id}}" method="post">
 
-<form class="edit-user" action="/user/edit?user_id={{user._id}}" method="post">
-<h1 class="tituloedit">Edit your profile info</h1>
-  <br />
-  <label for="email">E-mail</label>
-  <input type="email" name="email" value="{{user.email}}" />
-
-
-  <br />
-  <label for="password">Password*</label>
-  <input type="password" name="password"  required />
+    <label for="email">E-mail</label>
+    <input type="email" name="email" value="{{user.email}}" />
 
 
-  <br />
-  <label for="repeatPassword">Repeat password*</label>
-  <input type="password" name="repeatPassword" required />
+    <br />
+    <label for="password">Password*</label>
+    <input type="password" name="password" required />
 
 
-  <br />
-  <label for="fullname">Full name</label>
-  <input type="text" name="fullname" value="{{user.fullname}}" />
+    <br />
+    <label for="repeatPassword">Repeat password*</label>
+    <input type="password" name="repeatPassword" required />
 
-  <br />
-  <label for="description">Description</label>
-  <input type="text" name="description" value="{{user.description}}" />
 
-  <div class="edit-btn">
-    <button type="submit">Edit profile</button>
-</form>
-<form action="/user/delete?user_id={{user._id}}" method="post"><button class="delete-profile-btn" type="submit">Delete
-    account</button></form>
-</div>
+    <br />
+    <label for="fullname">Full name</label>
+    <input type="text" name="fullname" value="{{user.fullname}}" />
+
+    <br />
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{user.description}}" />
+
+
+    <button class="btneditevent1 futurist-button" type="submit">Edit profile</button>
+  </form>
+  <button class="btn-delete futurist-button" type="submit">Delete account</button>
+  </form>
