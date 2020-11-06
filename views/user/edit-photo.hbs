@@ -4,7 +4,7 @@
 </div>
 <section class="edit-photo-align">
     <img class="img-photo-profileedit" src="{{currentUserInfo.imgPath}}" alt="{{currentUserInfo.name}}">
-    <div>
+    <div class="">
         <form class="editform" action="/user/editPhoto?user_id={{currentUserInfo._id}}" method="post"
             enctype="multipart/form-data">
             <input class="input-form-align" type="file" name="photo" required />

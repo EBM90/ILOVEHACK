@@ -45,7 +45,7 @@ a {
   padding: 20px;
   width: 90%;
   background-color: #d4d2ce;
-  font-size: 18px;
+  font-size: 23px;
 }
 .service-box img {
   height: 75px;
@@ -784,8 +784,8 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width:100%;
-  padding: 0 3rem;
+  width:90%;
+  padding: 0;
 }
 .btneditevent2 {
   display: flex;
@@ -794,7 +794,7 @@ justify-content: center;
   flex-direction: column;
   font-size: 20px;
   /* margin-left: 320px; */
-  margin: 3rem 2rem;
+  margin: 0;
   /* width: 40%; */
 }
 
@@ -1405,11 +1405,15 @@ width: 50%;
   width: 30%;
 }
 
+.event-name-box {
+  padding: 2rem;
+}
+
 .events-desktop-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;  
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .align-allpage {
@@ -1534,9 +1538,21 @@ font-size: 38px;
 }
 .service-box {
   font-size: 28px;
+  width: 45%;
+  margin: 2.5rem 1rem 1rem;
 }
 
+#structure {
+  width: 100%;
+}
 
+#structure > div {
+  display: flex;
+  justify-content: between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* margin-top: -130px; */
+}
 
 }
 @media screen and (max-width: 990px) and (min-width: 710px) {
